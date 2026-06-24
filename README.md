@@ -34,7 +34,7 @@ Construir una solución de Inteligencia de Negocios para analizar ventas naciona
 * ⭐ Data Warehouse en esquema estrella.
 * 🔄 Proceso ETL hacia dimensiones y tabla de hechos.
 * 📥 Validación de productos externos desde Excel.
-* 🧊 Cubo multidimensional con SQL Server Analysis Services.
+* 🧊 Cubo Multidimensional con SQL Server Analysis Services.
 * 📐 Consultas MDX para análisis del cubo.
 * 📑 Reportes SQL.
 * 📊 Dashboard en Excel.
