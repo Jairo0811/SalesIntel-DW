@@ -387,5 +387,6 @@ Proyecto original desarrollado en grupo para la asignatura **Minería de Datos e
 ## 👨‍💻 Autor de la reconstrucción
 
 **Francis Jairo Matias Rosario**
+
 Reconstrucción, modernización técnica, documentación y preparación del proyecto para portafolio.
 
