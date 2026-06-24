@@ -33,7 +33,7 @@ El proyecto implementa un flujo completo de análisis de ventas utilizando **SQL
 | 🏫 Institución | Instituto Tecnológico de Las Américas (ITLA) |
 | 📘 Materia     | Minería de Datos e Inteligencia de Negocios  |
 | 🧾 Código      | SOF-014                                      |
-| 👨‍🏫 Profesor | Carlos Caraballo                             |
+| 👨‍🏫 Profesor    | Carlos Manuel Caraballo                      |
 | 📅 Período     | 2017-C3                                      |
 | 👥 Modalidad   | Proyecto Final Grupal                        |
 
@@ -421,7 +421,7 @@ La incorporación de **Power BI** no formó parte del alcance académico origina
 
 ## 🤝 Créditos
 
-Proyecto original desarrollado en grupo para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **ITLA**, impartida por el profesor **Carlos Caraballo**, durante el período **2017-C3**.
+Proyecto original desarrollado en grupo para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **ITLA**, impartida por el profesor **Carlos Manuel Caraballo**, durante el período **2017-C3**.
 
 ### 👥 Integrantes del proyecto original
 
