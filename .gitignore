@@ -1,0 +1,23 @@
+# Visual Studio / SQL Server
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+
+# Database files
+*.mdf
+*.ldf
+*.bak
+*.trn
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary
+*.tmp
+~$*

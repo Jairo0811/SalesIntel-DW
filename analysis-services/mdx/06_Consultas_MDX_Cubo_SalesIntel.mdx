@@ -1,0 +1,148 @@
+/*
+================================================================================
+PROYECTO: SalesIntel DW
+FASE 06: Consultas MDX para validar el Cubo de Ventas
+AUTOR: Jairo Matías
+
+Objetivo:
+- Probar el cubo después de crearlo y procesarlo en SQL Server Analysis Services.
+- Validar ventas por ciudad.
+- Validar ventas por producto y año.
+- Validar medidas principales.
+
+IMPORTANTE:
+Los nombres exactos de dimensiones, jerarquías y medidas pueden variar según
+cómo Visual Studio/SSDT genere el cubo. Si algún nombre no coincide, ajustarlo
+desde la pestaña Browser o Metadata del cubo.
+
+Nombre sugerido del cubo:
+[CuboVentasSalesIntel]
+================================================================================
+*/
+
+-- ============================================================================
+-- 1. TOTAL GENERAL DEL CUBO
+-- ============================================================================
+
+SELECT
+{
+    [Measures].[Total Vendido],
+    [Measures].[Cantidad Vendida],
+    [Measures].[Descuento]
+} ON COLUMNS
+FROM [CuboVentasSalesIntel];
+
+
+-- ============================================================================
+-- 2. VENTAS POR CIUDAD
+-- ============================================================================
+
+SELECT
+    {[Measures].[Total Vendido]} ON COLUMNS,
+    NON EMPTY
+    [Dim Ciudad].[Nombre Ciudad].[Nombre Ciudad].Members ON ROWS
+FROM [CuboVentasSalesIntel];
+
+
+-- ============================================================================
+-- 3. VENTAS POR PRODUCTO
+-- ============================================================================
+
+SELECT
+    {[Measures].[Total Vendido]} ON COLUMNS,
+    NON EMPTY
+    [Dim Producto].[Nombre Producto].[Nombre Producto].Members ON ROWS
+FROM [CuboVentasSalesIntel];
+
+
+-- ============================================================================
+-- 4. VENTAS POR PRODUCTO Y AÑO
+-- ============================================================================
+
+SELECT
+    NON EMPTY [Dim Tiempo].[Anio].[Anio].Members ON COLUMNS,
+    NON EMPTY [Dim Producto].[Nombre Producto].[Nombre Producto].Members ON ROWS
+FROM [CuboVentasSalesIntel]
+WHERE ([Measures].[Total Vendido]);
+
+
+-- ============================================================================
+-- 5. VENTAS POR CIUDAD Y PRODUCTO
+-- ============================================================================
+
+SELECT
+    {[Measures].[Total Vendido], [Measures].[Cantidad Vendida]} ON COLUMNS,
+    NON EMPTY
+    (
+        [Dim Ciudad].[Nombre Ciudad].[Nombre Ciudad].Members *
+        [Dim Producto].[Nombre Producto].[Nombre Producto].Members
+    ) ON ROWS
+FROM [CuboVentasSalesIntel];
+
+
+-- ============================================================================
+-- 6. VENTAS POR AÑO, TRIMESTRE Y MES
+-- ============================================================================
+
+SELECT
+    {[Measures].[Total Vendido]} ON COLUMNS,
+    NON EMPTY
+    (
+        [Dim Tiempo].[Anio].[Anio].Members *
+        [Dim Tiempo].[Nombre Trimestre].[Nombre Trimestre].Members *
+        [Dim Tiempo].[Nombre Mes].[Nombre Mes].Members
+    ) ON ROWS
+FROM [CuboVentasSalesIntel];
+
+
+-- ============================================================================
+-- 7. TOP 5 CIUDADES POR VENTAS
+-- ============================================================================
+
+SELECT
+    {[Measures].[Total Vendido]} ON COLUMNS,
+    TOPCOUNT(
+        [Dim Ciudad].[Nombre Ciudad].[Nombre Ciudad].Members,
+        5,
+        [Measures].[Total Vendido]
+    ) ON ROWS
+FROM [CuboVentasSalesIntel];
+
+
+-- ============================================================================
+-- 8. TOP 5 PRODUCTOS POR VENTAS
+-- ============================================================================
+
+SELECT
+    {[Measures].[Total Vendido]} ON COLUMNS,
+    TOPCOUNT(
+        [Dim Producto].[Nombre Producto].[Nombre Producto].Members,
+        5,
+        [Measures].[Total Vendido]
+    ) ON ROWS
+FROM [CuboVentasSalesIntel];
+
+
+-- ============================================================================
+-- 9. VENTAS POR REGIÓN Y CIUDAD
+-- ============================================================================
+
+SELECT
+    {[Measures].[Total Vendido]} ON COLUMNS,
+    NON EMPTY
+    (
+        [Dim Ciudad].[Region].[Region].Members *
+        [Dim Ciudad].[Nombre Ciudad].[Nombre Ciudad].Members
+    ) ON ROWS
+FROM [CuboVentasSalesIntel];
+
+
+-- ============================================================================
+-- 10. VENTAS POR TIPO DE CLIENTE
+-- ============================================================================
+
+SELECT
+    {[Measures].[Total Vendido], [Measures].[Cantidad Vendida]} ON COLUMNS,
+    NON EMPTY
+    [Dim Cliente].[Tipo Cliente].[Tipo Cliente].Members ON ROWS
+FROM [CuboVentasSalesIntel];
