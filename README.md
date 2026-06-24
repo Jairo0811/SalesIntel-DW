@@ -1,5 +1,25 @@
 # 📊 SalesIntel DW
 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=visualstudio,git,github" />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/SQL%20Server-2022-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" />
+  <img src="https://img.shields.io/badge/SSMS-SQL%20Server%20Management%20Studio-0078D4?style=for-the-badge&logo=microsoft&logoColor=white" />
+  <img src="https://img.shields.io/badge/SSAS-Analysis%20Services-5C2D91?style=for-the-badge&logo=microsoft&logoColor=white" />
+  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" />
+  <img src="https://img.shields.io/badge/Excel-Dashboard-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white" />
+</p>
+
+<p align="center">
+  <strong>Data Warehouse · ETL · SSAS Cube · MDX · Excel Dashboard · Power BI Dashboard</strong>
+</p>
+
+---
+
+## 📌 Descripción
+
 **SalesIntel DW** es una solución de **Inteligencia de Negocios (BI)** reconstruida y modernizada a partir de un proyecto final académico desarrollado originalmente en el **Instituto Tecnológico de Las Américas (ITLA)** para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)**.
 
 El proyecto implementa un flujo completo de análisis de ventas utilizando **SQL Server**, **Data Warehouse**, **ETL**, **vistas analíticas**, **SQL Server Analysis Services**, **consultas MDX**, **dashboard en Excel** y una versión moderna del dashboard en **Power BI**.
@@ -14,7 +34,7 @@ El proyecto implementa un flujo completo de análisis de ventas utilizando **SQL
 | 📘 Materia     | Minería de Datos e Inteligencia de Negocios  |
 | 🧾 Código      | SOF-014                                      |
 | 👨‍🏫 Profesor | Carlos Caraballo                             |
-| 📅 Período     | 2017-C3                                     |
+| 📅 Período     | 2017-C3                                      |
 | 👥 Modalidad   | Proyecto Final Grupal                        |
 
 ### 👨‍💻 Integrantes
@@ -73,14 +93,21 @@ SalesIntel DW
 
 ## 🛠️ Tecnologías utilizadas
 
-* 🗄️ SQL Server 2022
-* 🧰 SQL Server Management Studio
-* 💻 Visual Studio 2026
-* 🧩 SQL Server Data Tools
-* 🧊 SQL Server Analysis Services
-* 📐 MDX
-* 📗 Microsoft Excel
-* 📊 Microsoft Power BI Desktop
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=visualstudio,git,github" />
+</p>
+
+| Tecnología                      | Uso dentro del proyecto                            |
+| ------------------------------- | -------------------------------------------------- |
+| 🗄️ SQL Server 2022             | Motor de base de datos relacional                  |
+| 🧰 SQL Server Management Studio | Creación, ejecución y validación de scripts SQL    |
+| 💻 Visual Studio 2026           | Desarrollo del proyecto multidimensional           |
+| 🧩 SQL Server Data Tools        | Herramientas BI para Visual Studio                 |
+| 🧊 SQL Server Analysis Services | Creación y procesamiento del cubo multidimensional |
+| 📐 MDX                          | Consultas analíticas sobre el cubo                 |
+| 📗 Microsoft Excel              | Dashboard y análisis tabular                       |
+| 📊 Microsoft Power BI Desktop   | Dashboard moderno conectado al Data Warehouse      |
+| 🧬 Git / GitHub                 | Control de versiones y publicación del proyecto    |
 
 ---
 
@@ -342,6 +369,25 @@ Consultas incluidas:
 
 ---
 
+## 🚦 Estado del proyecto
+
+* [x] 🗄️ Modelo transaccional
+* [x] ⭐ Data Warehouse
+* [x] 🧪 Datos de prueba
+* [x] 🔄 ETL SQL
+* [x] 📥 Validación de productos externos
+* [x] 📑 Vistas de reportes
+* [x] 🧊 Vistas para cubo
+* [x] 🧊 Cubo SSAS
+* [x] ⚙️ Procesamiento del cubo
+* [x] 🔎 Browse de ventas por ciudad
+* [x] 📦 Browse de ventas por producto y año
+* [x] 📗 Dashboard Excel
+* [x] 📊 Dashboard Power BI
+* [x] 📝 Documentación para GitHub
+
+---
+
 ## 🖼️ Evidencias sugeridas
 
 Guardar capturas dentro de:
@@ -363,9 +409,9 @@ Capturas recomendadas:
 
 ---
 
-## 🚀 Propósito de esta reconstrucción
+## 🚀 Propósito de esta Reconstrucción
 
-Este repositorio conserva y moderniza un proyecto académico desarrollado originalmente en el período **2017-C-3**, transformándolo en una pieza presentable de portafolio profesional.
+Este repositorio conserva y moderniza un proyecto académico desarrollado originalmente en el período **2017-C3**, transformándolo en una pieza presentable de portafolio profesional.
 
 La reconstrucción mantiene la esencia del proyecto original: carga de datos, análisis de ventas, Data Warehouse, cubo multidimensional y visualización de resultados. A la vez, organiza los scripts, documentación, evidencias y artefactos técnicos bajo una estructura más limpia y mantenible para GitHub.
 
@@ -384,9 +430,10 @@ Proyecto original desarrollado en grupo para la asignatura **Minería de Datos e
 
 ---
 
-## 👨‍💻 Autor de la reconstrucción
+## 👨‍💻 Autor de la Reconstrucción
 
 **Francis Jairo Matias Rosario**
 
 Reconstrucción, modernización técnica, documentación y preparación del proyecto para portafolio.
+
 
