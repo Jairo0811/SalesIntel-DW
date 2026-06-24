@@ -1,4 +1,4 @@
-# SalesIntel DW
+# 📊 SalesIntel DW
 
 **SalesIntel DW** es una solución de **Inteligencia de Negocios (BI)** reconstruida y modernizada a partir de un proyecto final académico desarrollado originalmente en el **Instituto Tecnológico de Las Américas (ITLA)** para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)**.
 
@@ -6,43 +6,43 @@ El proyecto implementa un flujo completo de análisis de ventas utilizando **SQL
 
 ---
 
-## Información académica original
+## 🎓 Información académica original
 
-| Dato | Información |
-|---|---|
-| Institución | Instituto Tecnológico de Las Américas (ITLA) |
-| Materia | Minería de Datos e Inteligencia de Negocios |
-| Código | SOF-014 |
-| Profesor | Carlos Caraballo |
-| Período | 2017-C-3 |
-| Modalidad | Proyecto Final Grupal |
+| Dato           | Información                                  |
+| -------------- | -------------------------------------------- |
+| 🏫 Institución | Instituto Tecnológico de Las Américas (ITLA) |
+| 📘 Materia     | Minería de Datos e Inteligencia de Negocios  |
+| 🧾 Código      | SOF-014                                      |
+| 👨‍🏫 Profesor | Carlos Caraballo                             |
+| 📅 Período     | 2017-C3                                     |
+| 👥 Modalidad   | Proyecto Final Grupal                        |
 
-### Integrantes
+### 👨‍💻 Integrantes
 
-| Integrante | Matrícula |
-|---|---|
-| Francis Jairo Matias Rosario | 2015-2984 |
+| Integrante                    | Matrícula |
+| ----------------------------- | --------- |
+| Francis Jairo Matias Rosario  | 2015-2984 |
 | Jhon Christopher Adames Perez | 2015-2986 |
 
 ---
 
-## Objetivo
+## 🎯 Objetivo
 
 Construir una solución de Inteligencia de Negocios para analizar ventas nacionales por ciudad, producto, período y cliente, mediante:
 
-- Base de datos transaccional simulada.
-- Data Warehouse en esquema estrella.
-- Proceso ETL hacia dimensiones y tabla de hechos.
-- Validación de productos externos desde Excel.
-- Cubo multidimensional con SQL Server Analysis Services.
-- Consultas MDX para análisis del cubo.
-- Reportes SQL.
-- Dashboard en Excel.
-- Dashboard moderno en Power BI conectado al Data Warehouse.
+* 🗄️ Base de datos transaccional simulada.
+* ⭐ Data Warehouse en esquema estrella.
+* 🔄 Proceso ETL hacia dimensiones y tabla de hechos.
+* 📥 Validación de productos externos desde Excel.
+* 🧊 Cubo multidimensional con SQL Server Analysis Services.
+* 📐 Consultas MDX para análisis del cubo.
+* 📑 Reportes SQL.
+* 📊 Dashboard en Excel.
+* ⚡ Dashboard moderno en Power BI conectado al Data Warehouse.
 
 ---
 
-## Arquitectura
+## 🏗️ Arquitectura
 
 ```text
 SalesIntel DW
@@ -71,20 +71,20 @@ SalesIntel DW
 
 ---
 
-## Tecnologías utilizadas
+## 🛠️ Tecnologías utilizadas
 
-- SQL Server 2022
-- SQL Server Management Studio
-- Visual Studio 2026
-- SQL Server Data Tools
-- SQL Server Analysis Services
-- MDX
-- Microsoft Excel
-- Microsoft Power BI Desktop
+* 🗄️ SQL Server 2022
+* 🧰 SQL Server Management Studio
+* 💻 Visual Studio 2026
+* 🧩 SQL Server Data Tools
+* 🧊 SQL Server Analysis Services
+* 📐 MDX
+* 📗 Microsoft Excel
+* 📊 Microsoft Power BI Desktop
 
 ---
 
-## Estructura del repositorio
+## 📁 Estructura del repositorio
 
 ```text
 database/
@@ -123,7 +123,7 @@ assets/
 
 ---
 
-## Orden de ejecución
+## ▶️ Orden de ejecución
 
 Ejecutar los scripts en **SQL Server Management Studio** en el siguiente orden:
 
@@ -147,55 +147,55 @@ vw_Cubo_FactVentas
 
 ---
 
-## Modelo Data Warehouse
+## ⭐ Modelo Data Warehouse
 
 El Data Warehouse utiliza un **esquema estrella** compuesto por una tabla de hechos y cuatro dimensiones principales.
 
-### Dimensiones
+### 📌 Dimensiones
 
-- `DimProducto`
-- `DimCiudad`
-- `DimCliente`
-- `DimTiempo`
+* `DimProducto`
+* `DimCiudad`
+* `DimCliente`
+* `DimTiempo`
 
-### Tabla de hechos
+### 📈 Tabla de hechos
 
-- `FactVentas`
+* `FactVentas`
 
 La tabla de hechos almacena las métricas principales del análisis:
 
-- Cantidad vendida.
-- Precio unitario.
-- Descuento.
-- Total vendido.
+* Cantidad vendida.
+* Precio unitario.
+* Descuento.
+* Total vendido.
 
 ---
 
-## Cubo Multidimensional
+## 🧊 Cubo Multidimensional
 
-Nombre del Cubo:
+Nombre del cubo:
 
 ```text
 CuboVentasSalesIntel
 ```
 
-### Medidas Principales
+### 📊 Medidas principales
 
-- Total Vendido
-- Cantidad Vendida
-- Descuento
-- Precio Unitario
+* Total Vendido
+* Cantidad Vendida
+* Descuento
+* Precio Unitario
 
-### Dimensiones
+### 🧭 Dimensiones
 
-- Producto
-- Ciudad
-- Cliente
-- Tiempo
+* Producto
+* Ciudad
+* Cliente
+* Tiempo
 
 ---
 
-## Dashboard en Excel
+## 📗 Dashboard en Excel
 
 El dashboard en Excel se encuentra en:
 
@@ -205,37 +205,37 @@ excel/SalesIntel_DW_Dashboard_Excel.xlsx
 
 Incluye:
 
-- Indicadores generales.
-- Ventas por ciudad.
-- Ventas por producto y año.
-- Reporte de últimos tres meses.
-- Datos detallados del Data Warehouse.
-- Consultas SQL utilizadas como fuente.
+* Indicadores generales.
+* Ventas por ciudad.
+* Ventas por producto y año.
+* Reporte de últimos tres meses.
+* Datos detallados del Data Warehouse.
+* Consultas SQL utilizadas como fuente.
 
 ---
 
-## Dashboard en Power BI
+## 📊 Dashboard en Power BI
 
 Como capa moderna de visualización, el proyecto incluye un dashboard en **Power BI Desktop** conectado directamente al Data Warehouse `SalesIntel_DW`.
 
-Archivo sugerido:
+Archivo:
 
 ```text
 power-bi/SalesIntelDW.pbix
 ```
 
-### Visualizaciones incluidas
+### 📌 Visualizaciones incluidas
 
-- KPI: Cantidad vendida.
-- KPI: Descuento total.
-- KPI: Total de facturas.
-- KPI: Total vendido.
-- Gráfico de barras: ventas por ciudad.
-- Gráfico de barras: ventas por producto.
-- Matriz: ventas por producto y año.
-- Tabla: ventas de los últimos tres meses por ciudad y producto.
+* KPI: Cantidad vendida.
+* KPI: Descuento total.
+* KPI: Total de facturas.
+* KPI: Total vendido.
+* Gráfico de barras: ventas por ciudad.
+* Gráfico de barras: ventas por producto.
+* Matriz: ventas por producto y año.
+* Tabla: ventas de los últimos tres meses por ciudad y producto.
 
-### Fuente de datos usada en Power BI
+### 🗄️ Fuente de datos usada en Power BI
 
 Power BI consume las siguientes vistas del Data Warehouse:
 
@@ -246,7 +246,7 @@ vw_VentasProductoAnio
 vw_VentasUltimos3MesesProductoCiudad
 ```
 
-### Medidas DAX principales
+### 🧮 Medidas DAX principales
 
 ```DAX
 Total Vendido = SUM(vw_VentasDetalleDW[TotalVenta])
@@ -274,9 +274,9 @@ DIVIDE(
 
 ---
 
-## Consultas principales
+## 🔎 Consultas principales
 
-### Ventas por ciudad
+### 🏙️ Ventas por ciudad
 
 ```sql
 SELECT
@@ -286,7 +286,7 @@ FROM dbo.vw_VentasPorCiudad
 ORDER BY TotalVendido DESC;
 ```
 
-### Ventas por producto y año
+### 📦 Ventas por producto y año
 
 ```sql
 SELECT
@@ -299,7 +299,7 @@ ORDER BY
     NombreProducto;
 ```
 
-### Reporte de últimos tres meses
+### 🕒 Reporte de últimos tres meses
 
 ```sql
 EXEC dbo.sp_ReporteVentasUltimos3MesesProductoCiudad;
@@ -307,7 +307,7 @@ EXEC dbo.sp_ReporteVentasUltimos3MesesProductoCiudad;
 
 ---
 
-## Consultas MDX
+## 📐 Consultas MDX
 
 El repositorio incluye consultas MDX para validar y navegar el cubo desde SQL Server Analysis Services:
 
@@ -317,51 +317,32 @@ analysis-services/mdx/06_Consultas_MDX_Cubo_SalesIntel.mdx
 
 Consultas incluidas:
 
-- Total general del cubo.
-- Ventas por ciudad.
-- Ventas por producto.
-- Ventas por producto y año.
-- Ventas por ciudad y producto.
-- Ventas por año, trimestre y mes.
-- Top 5 ciudades por ventas.
-- Top 5 productos por ventas.
-- Ventas por región y ciudad.
-- Ventas por tipo de cliente.
+* Total general del cubo.
+* Ventas por ciudad.
+* Ventas por producto.
+* Ventas por producto y año.
+* Ventas por ciudad y producto.
+* Ventas por año, trimestre y mes.
+* Top 5 ciudades por ventas.
+* Top 5 productos por ventas.
+* Ventas por región y ciudad.
+* Ventas por tipo de cliente.
 
 ---
 
-## Resultados validados
+## ✅ Resultados validados
 
-| Métrica | Resultado |
-|---|---:|
-| Cantidad vendida | 183 |
-| Descuento total | 3,150.00 |
-| Total de facturas | 22 |
-| Total vendido | 222,995.00 |
-| Ventas últimos 3 meses | 83,230.00 |
-
----
-
-## Estado del proyecto
-
-- [x] Modelo transaccional
-- [x] Data Warehouse
-- [x] Datos de prueba
-- [x] ETL SQL
-- [x] Validación de productos externos
-- [x] Vistas de reportes
-- [x] Vistas para cubo
-- [x] Cubo SSAS
-- [x] Procesamiento del cubo
-- [x] Browse de ventas por ciudad
-- [x] Browse de ventas por producto y año
-- [x] Dashboard Excel
-- [x] Dashboard Power BI
-- [x] Documentación para GitHub
+| Métrica                   |  Resultado |
+| ------------------------- | ---------: |
+| 📦 Cantidad vendida       |        183 |
+| 🏷️ Descuento total       |   3,150.00 |
+| 🧾 Total de facturas      |         22 |
+| 💰 Total vendido          | 222,995.00 |
+| 🕒 Ventas últimos 3 meses |  83,230.00 |
 
 ---
 
-## Evidencias sugeridas
+## 🖼️ Evidencias sugeridas
 
 Guardar capturas dentro de:
 
@@ -382,7 +363,7 @@ Capturas recomendadas:
 
 ---
 
-## Propósito de esta reconstrucción
+## 🚀 Propósito de esta reconstrucción
 
 Este repositorio conserva y moderniza un proyecto académico desarrollado originalmente en el período **2017-C-3**, transformándolo en una pieza presentable de portafolio profesional.
 
@@ -392,18 +373,19 @@ La incorporación de **Power BI** no formó parte del alcance académico origina
 
 ---
 
-## Créditos
+## 🤝 Créditos
 
-Proyecto original desarrollado en grupo para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **ITLA**, impartida por el profesor **Carlos Caraballo**, durante el período **2017-C-3**.
+Proyecto original desarrollado en grupo para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **ITLA**, impartida por el profesor **Carlos Caraballo**, durante el período **2017-C3**.
 
-### Integrantes del proyecto original
+### 👥 Integrantes del proyecto original
 
-- **Francis Jairo Matias Rosario** — `2015-2984`
-- **Jhon Christopher Adames Perez** — `2015-2986`
+* **Francis Jairo Matias Rosario** — `2015-2984`
+* **Jhon Christopher Adames Perez** — `2015-2986`
 
 ---
 
-## Autor de la reconstrucción
+## 👨‍💻 Autor de la reconstrucción
 
-**Francis Jairo Matias Rosario**  
+**Francis Jairo Matias Rosario**
 Reconstrucción, modernización técnica, documentación y preparación del proyecto para portafolio.
+
