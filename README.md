@@ -171,15 +171,15 @@ La tabla de hechos almacena las métricas principales del análisis:
 
 ---
 
-## Cubo multidimensional
+## Cubo Multidimensional
 
-Nombre del cubo:
+Nombre del Cubo:
 
 ```text
 CuboVentasSalesIntel
 ```
 
-### Medidas principales
+### Medidas Principales
 
 - Total Vendido
 - Cantidad Vendida
