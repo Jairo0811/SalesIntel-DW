@@ -221,7 +221,7 @@ Como capa moderna de visualización, el proyecto incluye un dashboard en **Power
 Archivo sugerido:
 
 ```text
-power-bi/SalesIntel_DW_Dashboard.pbix
+power-bi/SalesIntelDW.pbix
 ```
 
 ### Visualizaciones incluidas
