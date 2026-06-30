@@ -20,9 +20,11 @@
 
 ## 📌 Descripción
 
-**SalesIntel DW** es una solución de **Inteligencia de Negocios (BI)** reconstruida y modernizada a partir de un proyecto final académico desarrollado originalmente en el **Instituto Tecnológico de Las Américas (ITLA)** para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)**.
+**SalesIntel DW** es una solución de **Inteligencia de Negocios (BI)** desarrollada nuevamente desde cero tomando como referencia un proyecto final académico realizado originalmente en el **Instituto Tecnológico de Las Américas (ITLA)** para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)**.
 
-El proyecto implementa un flujo completo de análisis de ventas utilizando **SQL Server**, **Data Warehouse**, **ETL**, **vistas analíticas**, **SQL Server Analysis Services**, **consultas MDX**, **dashboard en Excel** y una versión moderna del dashboard en **Power BI**.
+El proyecto académico original se conservó únicamente como antecedente y referencia histórica. Esta versión fue iniciada desde cero debido a que los archivos originales presentaban múltiples errores, incompatibilidades y una estructura difícil de mantener.
+
+La versión actual implementa un flujo completo de análisis de ventas utilizando **SQL Server**, **Data Warehouse**, **ETL**, **vistas analíticas**, **SQL Server Analysis Services**, **consultas MDX**, **dashboard en Excel** y una versión moderna del dashboard en **Power BI**.
 
 ---
 
@@ -33,11 +35,11 @@ El proyecto implementa un flujo completo de análisis de ventas utilizando **SQL
 | 🏫 Institución | Instituto Tecnológico de Las Américas (ITLA) |
 | 📘 Materia     | Minería de Datos e Inteligencia de Negocios  |
 | 🧾 Código      | SOF-014                                      |
-| 👨‍🏫 Profesor    | Carlos Manuel Caraballo                      |
+| 👨‍🏫 Profesor | Carlos Caraballo                             |
 | 📅 Período     | 2017-C3                                      |
 | 👥 Modalidad   | Proyecto Final Grupal                        |
 
-### 👨‍💻 Integrantes
+### 👥 Integrantes del proyecto académico original
 
 | Integrante                    | Matrícula |
 | ----------------------------- | --------- |
@@ -54,11 +56,11 @@ Construir una solución de Inteligencia de Negocios para analizar ventas naciona
 * ⭐ Data Warehouse en esquema estrella.
 * 🔄 Proceso ETL hacia dimensiones y tabla de hechos.
 * 📥 Validación de productos externos desde Excel.
-* 🧊 Cubo Multidimensional con SQL Server Analysis Services.
+* 🧊 Cubo multidimensional con SQL Server Analysis Services.
 * 📐 Consultas MDX para análisis del cubo.
 * 📑 Reportes SQL.
-* 📊 Dashboard en Excel.
-* ⚡ Dashboard moderno en Power BI conectado al Data Warehouse.
+* 📗 Dashboard en Excel.
+* 📊 Dashboard moderno en Power BI conectado al Data Warehouse.
 
 ---
 
@@ -198,7 +200,7 @@ La tabla de hechos almacena las métricas principales del análisis:
 
 ---
 
-## 🧊 Cubo Multidimensional
+## 🧊 Cubo multidimensional
 
 Nombre del cubo:
 
@@ -409,31 +411,31 @@ Capturas recomendadas:
 
 ---
 
-## 🚀 Propósito de esta Reconstrucción
+## 🚀 Propósito de esta versión
 
-Este repositorio conserva y moderniza un proyecto académico desarrollado originalmente en el período **2017-C3**, transformándolo en una pieza presentable de portafolio profesional.
+Este repositorio toma como referencia un proyecto académico desarrollado originalmente en el período **2017-C3**, pero la versión actual fue iniciada desde cero para corregir problemas estructurales, eliminar errores acumulados y presentar una solución más limpia, funcional y mantenible.
 
-La reconstrucción mantiene la esencia del proyecto original: carga de datos, análisis de ventas, Data Warehouse, cubo multidimensional y visualización de resultados. A la vez, organiza los scripts, documentación, evidencias y artefactos técnicos bajo una estructura más limpia y mantenible para GitHub.
+El objetivo de esta versión es conservar la idea académica original, análisis de ventas mediante BI, Data Warehouse y cubo multidimensional—, pero implementarla con una estructura moderna, documentación clara, scripts organizados y visualizaciones actualizadas.
 
 La incorporación de **Power BI** no formó parte del alcance académico original, pero se agregó como una capa moderna de visualización para fortalecer la presentación del proyecto en portafolio.
 
 ---
 
-## 🤝 Créditos
+## 🤝 Créditos académicos
 
-Proyecto original desarrollado en grupo para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **ITLA**, impartida por el profesor **Carlos Manuel Caraballo**, durante el período **2017-C3**.
+La idea base proviene de un proyecto final grupal realizado para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **ITLA**, impartida por el profesor **Carlos Caraballo**, durante el período **2017-C3**.
 
-### 👥 Integrantes del proyecto original
+### 👥 Integrantes del proyecto académico original
 
 * **Francis Jairo Matias Rosario** — `2015-2984`
 * **Jhon Christopher Adames Perez** — `2015-2986`
 
 ---
 
-## 👨‍💻 Autor de la Reconstrucción
+## 👨‍💻 Autor de esta versión
 
 **Francis Jairo Matias Rosario**
 
-Reconstrucción, modernización técnica, documentación y preparación del proyecto para portafolio.
+Diseño, desarrollo desde cero, modernización técnica, documentación y preparación del proyecto para portafolio.
 
 
