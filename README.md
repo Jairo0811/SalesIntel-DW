@@ -1,7 +1,7 @@
 # 📊 SalesIntel DW
 
 <p align="center">
-  <img src="docs/logo.jpeg" width="260" alt="SalesIntel DW Logo">
+  <img src="docs/logo.png" width="260" alt="SalesIntel DW Logo">
 </p>
 
 <p align="center">
