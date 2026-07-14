@@ -30,7 +30,7 @@
 
 ## 📖 Descripción
 
-**SalesIntel DW** es una solución de **Inteligencia de Negocios (BI)** desarrollada nuevamente desde cero tomando como referencia un proyecto final académico realizado originalmente en **2017** para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **Instituto Tecnológico de las Américas (ITLA)**.
+**SalesIntel DW** es una solución de **Business Intelligence (BI)** desarrollada nuevamente desde cero tomando como referencia un **proyecto final académico** realizado durante el **período cuatrimestral 2017-C3** para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **Instituto Tecnológico de las Américas (ITLA)**.
 
 El proyecto académico original presentaba múltiples errores, incompatibilidades y una estructura difícil de mantener. Por esta razón, en **2026** se creó una nueva implementación completa, organizada y documentada, conservando la idea académica original y modernizándola como una pieza de portafolio profesional.
 
@@ -47,14 +47,17 @@ La solución implementa un flujo completo de análisis de ventas mediante:
 
 ---
 
-## 📌 Información del proyecto
+# 📌 Información del proyecto
 
-- 📘 **Materia:** Minería de Datos e Inteligencia de Negocios (SOF-014)
-- 👨‍🏫 **Profesor:** Carlos Caraballo
-- 🏫 **Institución:** Instituto Tecnológico de las Américas (ITLA)
-- 📅 **Período académico original:** 2017-C3
-- 🛠️ **Nueva implementación y documentación:** 2026
-- ✅ **Estado:** Finalizado
+| Información | Detalle |
+|-------------|---------|
+| 🏫 Institución | Instituto Tecnológico de las Américas (ITLA) |
+| 📘 Materia | Minería de Datos e Inteligencia de Negocios (SOF-014) |
+| 👨‍🏫 Profesor | Carlos Caraballo |
+| 📅 Período académico | **2017-C3** |
+| 👥 Modalidad | Proyecto Final Grupal |
+| 🛠️ Nueva implementación | 2026 |
+| ✅ Estado | Finalizado |
 
 ---
 
