@@ -2,6 +2,8 @@
   <img src="docs/logo.png" width="230" alt="SalesIntel DW Logo">
 </p>
 
+
+
 <h1 align="center">📊 SalesIntel DW</h1>
 
 <p align="center">
@@ -24,6 +26,7 @@
   <img src="https://img.shields.io/badge/Status-Finalizado-success?style=for-the-badge" alt="Estado">
   <img src="https://img.shields.io/badge/Original-2017-blue?style=for-the-badge" alt="Proyecto original">
   <img src="https://img.shields.io/badge/Nueva%20versión-2026-brightgreen?style=for-the-badge" alt="Nueva versión">
+ <img src="https://img.shields.io/badge/ITLA-2017--C3-0057B8?style=for-the-badge"/>
 </p>
 
 ---
