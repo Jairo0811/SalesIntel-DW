@@ -1,10 +1,8 @@
+
+<h1 align="center">📊 SalesIntel DW</h1>
 <p align="center">
   <img src="docs/logo.png" width="230" alt="SalesIntel DW Logo">
 </p>
-
-
-
-<h1 align="center">📊 SalesIntel DW</h1>
 
 <p align="center">
   <strong>Business Intelligence Platform</strong>
