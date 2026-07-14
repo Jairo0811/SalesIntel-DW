@@ -19,6 +19,7 @@
 </p>
 
 <p align="center">
+   <img src="https://img.shields.io/badge/ITLA-2017--C3-0057B8?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/SQL%20Server-2022-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="SQL Server">
   <img src="https://img.shields.io/badge/SSAS-Analysis%20Services-5C2D91?style=for-the-badge&logo=microsoft&logoColor=white" alt="SSAS">
   <img src="https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI">
@@ -26,7 +27,7 @@
   <img src="https://img.shields.io/badge/Status-Finalizado-success?style=for-the-badge" alt="Estado">
   <img src="https://img.shields.io/badge/Original-2017-blue?style=for-the-badge" alt="Proyecto original">
   <img src="https://img.shields.io/badge/Nueva%20versión-2026-brightgreen?style=for-the-badge" alt="Nueva versión">
- <img src="https://img.shields.io/badge/ITLA-2017--C3-0057B8?style=for-the-badge"/>
+
 </p>
 
 ---
