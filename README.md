@@ -1,11 +1,15 @@
-# 📊 SalesIntel DW
+<p align="center">
+  <img src="docs/logo.png" width="220" alt="SalesIntel DW Logo">
+</p>
+
+<h1 align="center">📊 SalesIntel DW</h1>
 
 <p align="center">
-  <img src="docs/logo.png" width="260" alt="SalesIntel DW Logo">
+  <strong>Business Intelligence • Data Warehouse • ETL • SSAS • Power BI</strong>
 </p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=visualstudio,git,github" alt="Tecnologías utilizadas" />
+  <img src="https://skillicons.dev/icons?i=visualstudio,git,github" alt="Tecnologías utilizadas"/>
 </p>
 
 <p align="center">
@@ -13,12 +17,8 @@
   <img src="https://img.shields.io/badge/SSAS-Analysis%20Services-5C2D91?style=for-the-badge&logo=microsoft&logoColor=white"/>
   <img src="https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
   <img src="https://img.shields.io/badge/Excel-Dashboard-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge"/>
 </p>
-
-<p align="center">
-  <strong>SQL Server · Data Warehouse · ETL · SSAS · MDX · Excel · Power BI</strong>
-</p>
-
 ---
 
 ## 📖 Descripción
