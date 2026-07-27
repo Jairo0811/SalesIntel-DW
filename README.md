@@ -1,4 +1,3 @@
-
 <h1 align="center">📊 SalesIntel DW</h1>
 <p align="center">
   <img src="docs/logo.png" width="230" alt="SalesIntel DW Logo">
@@ -25,7 +24,6 @@
   <img src="https://img.shields.io/badge/Status-Finalizado-success?style=for-the-badge" alt="Estado">
   <img src="https://img.shields.io/badge/Original-2017-blue?style=for-the-badge" alt="Proyecto original">
   <img src="https://img.shields.io/badge/Nueva%20versión-2026-brightgreen?style=for-the-badge" alt="Nueva versión">
-
 </p>
 
 ---
@@ -96,24 +94,66 @@ La solución implementa un flujo completo de análisis de ventas mediante:
 
 ---
 
-## 🧰 Tecnologías utilizadas
+## 🧰 Stack tecnológico
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=visualstudio,git,github" alt="Tecnologías utilizadas">
+### 📥 Integración y procesos ETL
+
+<p>
+  <img src="https://img.shields.io/badge/ETL-SQL-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="ETL con SQL" />
+  <img src="https://img.shields.io/badge/Staging-Data%20Processing-1F4E79?style=flat-square&logo=databricks&logoColor=white" alt="Staging y procesamiento de datos" />
 </p>
 
-| Tecnología | Uso dentro del proyecto |
-|------------|-------------------------|
-| 🗄️ Microsoft SQL Server 2022 | Motor de base de datos utilizado para el modelo OLTP y el Data Warehouse. |
-| 🧰 SQL Server Management Studio | Creación, ejecución y validación de scripts SQL. |
-| 💻 Visual Studio | Desarrollo del proyecto multidimensional. |
-| 🧩 SQL Server Data Tools | Herramientas BI utilizadas dentro de Visual Studio. |
-| 🧊 SQL Server Analysis Services | Creación y procesamiento del cubo OLAP. |
-| 📐 MDX | Consultas analíticas sobre el cubo multidimensional. |
-| 📗 Microsoft Excel | Dashboard analítico y validación de resultados. |
-| 📊 Microsoft Power BI Desktop | Dashboard interactivo conectado al Data Warehouse. |
-| 🌿 Git | Control de versiones. |
-| 🐙 GitHub | Publicación y documentación del proyecto. |
+- Scripts SQL para extracción, transformación y carga.
+- Área de staging para importación y validación de datos.
+- Limpieza, transformación y generación de claves sustitutas.
+- Carga de dimensiones y de la tabla de hechos.
+
+### 🏛️ Data Warehouse y almacenamiento
+
+<p>
+  <img src="https://img.shields.io/badge/SQL%20Server-2022-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="SQL Server 2022" />
+  <img src="https://img.shields.io/badge/Star%20Schema-Data%20Warehouse-1F4E79?style=flat-square&logo=databricks&logoColor=white" alt="Esquema estrella" />
+</p>
+
+- Microsoft SQL Server 2022.
+- Modelo transaccional OLTP.
+- Data Warehouse con esquema estrella.
+- Dimensiones, tabla de hechos, vistas y procedimientos almacenados.
+
+### 🧊 Análisis multidimensional
+
+<p>
+  <img src="https://img.shields.io/badge/SSAS-Analysis%20Services-5C2D91?style=flat-square&logo=microsoft&logoColor=white" alt="SQL Server Analysis Services" />
+  <img src="https://img.shields.io/badge/MDX-Multidimensional%20Queries-5C2D91?style=flat-square&logo=microsoft&logoColor=white" alt="MDX" />
+</p>
+
+- SQL Server Analysis Services.
+- Cubo OLAP multidimensional.
+- Consultas analíticas mediante MDX.
+- Medidas, dimensiones y navegación multidimensional.
+
+### 📈 Visualización y análisis de datos
+
+<p>
+  <img src="https://img.shields.io/badge/Power%20BI-Desktop-F2C811?style=flat-square&logo=powerbi&logoColor=black" alt="Power BI Desktop" />
+  <img src="https://img.shields.io/badge/Microsoft%20Excel-Dashboard-217346?style=flat-square&logo=microsoftexcel&logoColor=white" alt="Microsoft Excel" />
+</p>
+
+- Microsoft Power BI Desktop.
+- Microsoft Excel.
+- Dashboards ejecutivos, KPIs y reportes analíticos.
+- Visualizaciones por ciudad, producto, cliente y período.
+
+### 🧰 Herramientas de desarrollo
+
+<p>
+  <img src="https://skillicons.dev/icons?i=visualstudio,git,github" alt="Visual Studio, Git y GitHub" />
+</p>
+
+- Visual Studio.
+- SQL Server Data Tools.
+- SQL Server Management Studio.
+- Git y GitHub.
 
 ---
 
@@ -333,8 +373,6 @@ Como parte del proyecto académico original se desarrolló un dashboard utilizan
 - Indicadores generales.
 - Ventas por ciudad.
 - Ventas por producto.
-- Ventas por año.
-- Tablas dinámicas.
 - Gráficos dinámicos.
 - Reportes ejecutivos.
 
