@@ -135,6 +135,11 @@ La solución implementa un flujo completo de análisis de ventas mediante:
   <img src="https://skillicons.dev/icons?i=visualstudio,git,github" alt="Visual Studio, Git y GitHub" />
 </p>
 
+<p>
+  <img src="https://img.shields.io/badge/SQL%20Server%20Data%20Tools-Visual%20Studio-5C2D91?style=flat-square&logo=visualstudio&logoColor=white" alt="SQL Server Data Tools" />
+  <img src="https://img.shields.io/badge/SQL%20Server%20Management%20Studio-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="SQL Server Management Studio" />
+</p>
+
 - Visual Studio.
 - SQL Server Data Tools.
 - SQL Server Management Studio.
