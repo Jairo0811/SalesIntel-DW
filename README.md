@@ -96,7 +96,7 @@ La solución implementa un flujo completo de análisis de ventas mediante:
 ### 🏛️ Data Warehouse y almacenamiento
 
 <p>
-  <img src="https://img.shields.io/badge/SQL%20Server-2022-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="SQL Server 2022" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Microsoft SQL Server" width="48" height="48" />
   <img src="https://img.shields.io/badge/Star%20Schema-Data%20Warehouse-1F4E79?style=flat-square&logo=databricks&logoColor=white" alt="Esquema estrella" />
 </p>
 
