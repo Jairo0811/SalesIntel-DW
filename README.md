@@ -5,6 +5,10 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/ITLA-2017--C3-0057B8?style=for-the-badge" alt="ITLA 2017-C3">
+</p>
+
+<p align="center">
   <strong>Business Intelligence Platform</strong>
 </p>
 
@@ -13,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ITLA-2017--C3-0057B8?style=for-the-badge" alt="ITLA 2017-C3">
+
   <img src="https://img.shields.io/badge/Status-Finalizado-success?style=for-the-badge" alt="Estado del proyecto">
   <img src="https://img.shields.io/badge/Reimplementación-2026-brightgreen?style=for-the-badge" alt="Reimplementación 2026">
 </p>
