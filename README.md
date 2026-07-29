@@ -1,7 +1,7 @@
 <h1 align="center">📊 SalesIntel DW</h1>
 
 <p align="center">
-  <img src="docs/logo.png" width="230" alt="SalesIntel DW Logo">
+  <img src="docs/logo.jpeg" width="230" alt="SalesIntel DW Logo">
 </p>
 
 <p align="center">
