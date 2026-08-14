@@ -61,7 +61,7 @@ La solución implementa un flujo completo de análisis de ventas mediante:
 | Integrante | Matrícula |
 |------------|-----------|
 | 👤 Francis Jairo Matías Rosario | **2015-2984** |
-| 👤 Jhon Christopher Adames Perez | **2015-2986** |
+| 👤 John Christopher Adames Perez | **2015-2986** |
 
 ---
 
