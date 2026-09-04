@@ -1,390 +1,238 @@
-
 <p align="center">
   <img src="docs/logo.jpeg" width="420" alt="SalesIntel DW Logo">
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/ITLA-2017--C3-0057B8?style=for-the-badge" alt="ITLA 2017-C3">
+  <img src="https://img.shields.io/badge/Status-Finalizado-success?style=for-the-badge" alt="Estado del proyecto">
+  <img src="https://img.shields.io/badge/Reimplementación-2026-brightgreen?style=for-the-badge" alt="Reimplementación 2026">
 </p>
 
 <p align="center">
-  <strong>Business Intelligence Platform</strong>
+  <strong>Business Intelligence / Data Warehouse Portfolio Project</strong>
 </p>
 
 <p align="center">
   SQL Server • Data Warehouse • ETL • SSAS • MDX • Excel • Power BI
 </p>
 
-<p align="center">
-
-  <img src="https://img.shields.io/badge/Status-Finalizado-success?style=for-the-badge" alt="Estado del proyecto">
-  <img src="https://img.shields.io/badge/Reimplementación-2026-brightgreen?style=for-the-badge" alt="Reimplementación 2026">
-</p>
-
 ---
 
 ## 📖 Descripción
 
-**SalesIntel DW** es una solución de **Business Intelligence (BI)** reimplementada completamente desde cero tomando como referencia un **proyecto final académico** realizado durante el **período académico 2017-C3** para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **Instituto Tecnológico de las Américas (ITLA)**.
+**SalesIntel DW** es una solución de **Business Intelligence (BI)** reimplementada completamente desde cero tomando como referencia un **proyecto final académico** realizado durante el **período 2017-C3** para la asignatura **Minería de Datos e Inteligencia de Negocios (SOF-014)** del **Instituto Tecnológico de las Américas (ITLA)**.
 
-El proyecto académico original presentaba múltiples errores, incompatibilidades y una estructura difícil de mantener. Por esta razón, en **2026** se creó una nueva implementación completa, organizada y documentada, conservando la idea académica original y modernizándola como una pieza de portafolio profesional.
+El proyecto académico original presentaba errores, incompatibilidades y una estructura difícil de mantener. En **2026** se creó una nueva implementación organizada, documentada y reproducible, conservando el objetivo académico original y transformándolo en una pieza de portafolio profesional enfocada en ingeniería de datos y analítica.
 
-La solución implementa un flujo completo de análisis de ventas mediante:
+La solución implementa el flujo:
 
-- 🗄️ Base de datos transaccional OLTP.
-- ⭐ Data Warehouse con esquema estrella.
-- 🔄 Procesos ETL.
-- 🧊 Cubo multidimensional mediante SQL Server Analysis Services.
-- 📐 Consultas MDX.
-- 📑 Reportes SQL.
-- 📗 Dashboard analítico en Microsoft Excel.
-- 📊 Dashboard interactivo en Microsoft Power BI.
+```text
+SalesIntel_OLTP
+      │
+      ▼
+ Staging / ETL
+      │
+      ▼
+ SalesIntel_DW
+   │        │
+   │        ├────────► SSAS ───────► Cubo OLAP ───────► MDX
+   │
+   ├────────► Excel
+   │
+   └────────► Power BI
+```
 
 ---
 
 ## 📌 Información del proyecto
 
 | Información | Detalle |
-|-------------|---------|
+|---|---|
 | 🏫 Institución | Instituto Tecnológico de las Américas (ITLA) |
 | 📘 Asignatura | Minería de Datos e Inteligencia de Negocios (SOF-014) |
 | 👨‍🏫 Profesor | Carlos Caraballo |
-| 📅 Período | **2017-C3** |
+| 📅 Período académico original | **2017-C3** |
 | 👥 Modalidad | Proyecto Final Grupal |
-| 🛠️ Reimplementación | 2026 |
-| 📌 Estado | ✅ Finalizado |
+| 🛠️ Reimplementación | **2026** |
+| 🎯 Enfoque actual | Portafolio profesional de BI / Data Warehouse |
+| 📌 Estado | ✅ Finalizado / Maintenance Mode |
 
----
-
-## 👥 Integrantes del proyecto académico original
+### Integrantes del proyecto académico original
 
 | Integrante | Matrícula |
-|------------|-----------|
-| 👤 Francis Jairo Matías Rosario | **2015-2984** |
-| 👤 John Christopher Adames Perez | **2015-2986** |
+|---|---|
+| Francis Jairo Matías Rosario | **2015-2984** |
+| John Christopher Adames Perez | **2015-2986** |
 
 ---
 
 ## ✨ Funcionalidades
 
-- 🗄️ Modelo OLTP para la gestión de ventas.
+- 🗄️ Modelo transaccional OLTP para ventas.
 - ⭐ Data Warehouse con esquema estrella.
-- 🔄 Procesos ETL para dimensiones y tabla de hechos.
-- 📥 Importación y validación de productos desde Excel.
+- 🔄 ETL para dimensiones y tabla de hechos.
+- 📥 Staging y validación de productos procedentes de Excel.
+- 🔑 Claves sustitutas para el modelo dimensional.
 - 🏙️ Análisis por ciudad, producto, cliente y período.
-- 🧊 Cubo OLAP mediante SQL Server Analysis Services.
-- 📐 Consultas multidimensionales mediante MDX.
-- 📑 Reportes SQL mediante vistas y procedimientos almacenados.
+- 📑 Vistas y procedimientos almacenados para reporting.
+- 🧊 Capa multidimensional mediante SQL Server Analysis Services.
+- 📐 Consultas MDX para exploración del cubo.
 - 📗 Dashboard analítico en Microsoft Excel.
 - 📊 Dashboard interactivo en Microsoft Power BI.
-- 📈 Indicadores y KPIs de ventas.
-- 📚 Documentación técnica del proceso completo.
+- 📈 KPIs ejecutivos de ventas.
+- ✅ Validaciones SQL automatizadas con `THROW`.
+- 📚 Documentación técnica, arquitectura y guía de reproducción.
 
 ---
 
 ## 🧰 Stack tecnológico
 
-### 📥 Integración y procesos ETL
-
-<p>
-  <img src="https://img.shields.io/badge/ETL-SQL-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="ETL con SQL" />
-  <img src="https://img.shields.io/badge/Staging-Data%20Processing-1F4E79?style=flat-square&logo=databricks&logoColor=white" alt="Staging y procesamiento de datos" />
-</p>
-
-- Scripts SQL para extracción, transformación y carga.
-- Área de staging para importación y validación de datos.
-- Limpieza, transformación y generación de claves sustitutas.
-- Carga de dimensiones y de la tabla de hechos.
-
-### 🏛️ Data Warehouse y almacenamiento
-
-<p>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Microsoft SQL Server" width="48" height="48" />
-  <img src="https://img.shields.io/badge/Star%20Schema-Data%20Warehouse-1F4E79?style=flat-square&logo=databricks&logoColor=white" alt="Esquema estrella" />
-</p>
+### Datos y ETL
 
 - Microsoft SQL Server 2022.
-- Modelo transaccional OLTP.
-- Data Warehouse con esquema estrella.
-- Dimensiones, tabla de hechos, vistas y procedimientos almacenados.
+- T-SQL.
+- Modelo OLTP.
+- Staging.
+- ETL mediante scripts SQL.
+- Esquema estrella.
+- Vistas, procedimientos almacenados e índices analíticos.
 
-### 🧊 Análisis multidimensional
+### Análisis multidimensional
 
-<p>
-  <img src="https://img.shields.io/badge/SSAS-Analysis%20Services-5C2D91?style=flat-square&logo=microsoft&logoColor=white" alt="SQL Server Analysis Services" />
-  <img src="https://img.shields.io/badge/MDX-Multidimensional%20Queries-5C2D91?style=flat-square&logo=microsoft&logoColor=white" alt="MDX" />
-</p>
+- SQL Server Analysis Services (SSAS Multidimensional).
+- SQL Server Data Tools / Visual Studio.
+- Data Source View.
+- Cubo OLAP.
+- MDX.
 
-- SQL Server Analysis Services.
-- Cubo OLAP multidimensional.
-- Consultas analíticas mediante MDX.
-- Medidas, dimensiones y navegación multidimensional.
+### Visualización
 
-### 📈 Visualización y análisis de datos
-
-<p>
-  <img src="https://img.shields.io/badge/Power%20BI-Desktop-F2C811?style=flat-square&logo=powerbi&logoColor=black" alt="Power BI Desktop" />
-  <img src="https://img.shields.io/badge/Microsoft%20Excel-Dashboard-217346?style=flat-square&logo=microsoftexcel&logoColor=white" alt="Microsoft Excel" />
-</p>
-
-- Microsoft Power BI Desktop.
 - Microsoft Excel.
-- Dashboards ejecutivos, KPIs y reportes analíticos.
-- Visualizaciones por ciudad, producto, cliente y período.
+- Microsoft Power BI Desktop.
 
-### 🧰 Herramientas de desarrollo
+### Ingeniería y documentación
 
-<p>
-  <img src="https://skillicons.dev/icons?i=visualstudio,git,github" alt="Visual Studio, Git y GitHub" />
-</p>
-
-<p>
-  <img src="https://img.shields.io/badge/SQL%20Server%20Data%20Tools-Visual%20Studio-5C2D91?style=flat-square&logo=visualstudio&logoColor=white" alt="SQL Server Data Tools" />
-  <img src="https://img.shields.io/badge/SQL%20Server%20Management%20Studio-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="SQL Server Management Studio" />
-</p>
-
-- Visual Studio.
-- SQL Server Data Tools.
-- SQL Server Management Studio.
-- Git y GitHub.
+- Git.
+- GitHub.
+- Markdown.
+- Diagramas Mermaid.
 
 ---
 
 ## 📊 Estadísticas del proyecto
 
 | Elemento | Cantidad |
-|----------|---------:|
+|---|---:|
 | 🗄️ Tablas OLTP | **5** |
 | ⭐ Dimensiones | **4** |
-| 📈 Tabla de hechos | **1** |
-| 📥 Tabla de Staging | **1** |
-| 🧊 Cubo SSAS | **1** |
+| 📈 Tablas de hechos | **1** |
+| 📥 Tablas de staging | **1** |
+| 🧊 Cubos SSAS | **1** |
 | 📐 Consultas MDX | **10** |
-| 📑 Scripts SQL | **5** |
+| 📑 Scripts SQL principales | **6** |
 | 📊 Dashboards | **2** |
-| 📋 Procedimientos almacenados | **1** |
-| 👁️ Vistas analíticas | **9** |
+| 📋 Procedimientos almacenados | **2** |
+| 👁️ Vistas analíticas / SSAS | **9** |
 
 ---
 
-## 🏗️ Arquitectura de la solución
+## 🏗️ Arquitectura
+
+La solución mantiene separadas la operación transaccional y la lectura analítica:
 
 ```text
-SalesIntel_OLTP
-      │
-      ▼
-  Proceso ETL
-      │
-      ▼
+Fuentes OLTP / Excel
+        │
+        ▼
+ Staging / Validación
+        │
+        ▼
+       ETL
+        │
+        ▼
  SalesIntel_DW
-   │        │
-   │        ├────────► Cubo SSAS ───────► Consultas MDX
+   │     │      │
+   │     │      └────► Vistas / Stored Procedures
+   │     │
+   │     └───────────► SSAS / Cubo / MDX
    │
-   ├────────► Dashboard Excel
-   │
-   └────────► Dashboard Power BI
+   ├─────────────────► Excel
+   └─────────────────► Power BI
 ```
 
----
-
-## 📂 Estructura del repositorio
+Documentación detallada:
 
 ```text
-SalesIntel-DW
-│
-├── 📁 analysis-services
-│   └── 📁 mdx
-│       └── 06_Consultas_MDX_Cubo_SalesIntel.mdx
-│
-├── 📁 assets
-│   └── 📁 screenshots
-│
-├── 📁 database
-│   ├── 📁 01_model
-│   ├── 📁 02_seed
-│   ├── 📁 03_etl
-│   ├── 📁 04_reports
-│   └── 📁 05_cube
-│
-├── 📁 docs
-│   ├── Evidencias.md
-│   ├── Guia_Crear_Cubo_SalesIntel_DW.md
-│   ├── Setup.md
-│   └── logo.png
-│
-├── 📁 excel
-│   └── SalesIntel_DW_Dashboard_Excel.xlsx
-│
-├── 📁 power-bi
-│   └── SalesIntelDW.pbix
-│
-├── 📁 legacy
-│
-├── 📄 README.md
-├── 📄 LICENSE
-└── 📄 .gitignore
+docs/ARCHITECTURE.md
 ```
 
 ---
 
-## ▶️ Orden de ejecución
+## ⭐ Modelo dimensional
 
-Ejecutar los scripts desde **SQL Server Management Studio** respetando el siguiente orden:
+### Dimensiones
 
-```text
-01_Crear_Modelo_SalesIntel_DW.sql
-02_Insertar_Datos_Prueba_SalesIntel_DW.sql
-03_ETL_Cargar_DW_SalesIntel.sql
-04_Consultas_Reportes_SalesIntel.sql
-05_Preparar_Cubo_SalesIntel.sql
-```
+- `DimCiudad`
+- `DimProducto`
+- `DimCliente`
+- `DimTiempo`
 
-Posteriormente:
+### Tabla de hechos
 
-1. 💻 Abrir el proyecto multidimensional en **Visual Studio**.
-2. 🔗 Configurar el **Data Source** apuntando a `SalesIntel_DW`.
-3. 🗂️ Crear el **Data Source View**.
-4. 🧊 Construir el cubo `CuboVentasSalesIntel`.
-5. ⚙️ Procesar el cubo.
-6. 📐 Ejecutar las consultas MDX.
-7. 📊 Abrir `SalesIntelDW.pbix`.
-8. 🔄 Actualizar los datos del dashboard.
+- `FactVentas`
 
----
+### Métricas principales
 
-## ⭐ Modelo Data Warehouse
+- Cantidad vendida.
+- Precio unitario.
+- Descuento.
+- Total vendido.
 
-El proyecto implementa un **Data Warehouse** utilizando un **esquema estrella (Star Schema)** para optimizar el análisis multidimensional y el rendimiento de las consultas.
-
-### 📌 Dimensiones
-
-- 🏙️ `DimCiudad`
-- 📦 `DimProducto`
-- 👤 `DimCliente`
-- 📅 `DimTiempo`
-
-### 📈 Tabla de hechos
-
-- 💰 `FactVentas`
-
-La tabla de hechos almacena las principales métricas utilizadas por el cubo y los dashboards:
-
-- 📦 Cantidad Vendida
-- 💵 Precio Unitario
-- 🏷️ Descuento
-- 💰 Total Vendido
+La granularidad de `FactVentas` corresponde a cada detalle de factura y se preserva mediante `IdDetalleFactura` único.
 
 ---
 
-## 🔄 Proceso ETL
+## 🔄 ETL
 
-El proceso ETL realiza la extracción, transformación y carga de datos desde la base transaccional **SalesIntel_OLTP** hacia el Data Warehouse **SalesIntel_DW**.
-
-### Flujo
+El proceso ETL carga información desde `SalesIntel_OLTP` hacia `SalesIntel_DW`.
 
 ```text
 SalesIntel_OLTP
         │
         ▼
- Extracción de Datos
+ Extracción
         │
         ▼
  Transformación
         │
         ▼
-Carga de Dimensiones
+ Dimensiones
         │
         ▼
-Carga de FactVentas
+ FactVentas
         │
         ▼
-SalesIntel_DW
+ SalesIntel_DW
 ```
 
-Durante este proceso se realizan:
+Incluye:
 
-- 🔄 Transformación de registros.
-- 🧹 Limpieza de datos.
-- 🔑 Generación de claves sustitutas.
-- 📅 Construcción de la dimensión Tiempo.
-- 📊 Carga de la tabla de hechos.
+- limpieza de datos;
+- construcción de claves sustitutas;
+- carga de dimensiones;
+- construcción de `DimTiempo`;
+- staging de productos externos;
+- validación de duplicados;
+- carga de hechos;
+- consultas de comprobación.
+
+> El ETL actual está diseñado como una implementación reproducible de laboratorio/portafolio mediante recarga completa. Cargas incrementales, CDC, SCD, orquestación y observabilidad quedan fuera del alcance de esta versión académica-profesional.
 
 ---
 
-## 🧊 Cubo multidimensional (SSAS)
+## 📑 Reporting SQL
 
-El proyecto incorpora un **cubo OLAP** desarrollado mediante **SQL Server Analysis Services (SSAS)**, permitiendo realizar análisis multidimensionales sobre la información almacenada en el Data Warehouse.
-
-### 📦 Nombre del cubo
-
-```text
-CuboVentasSalesIntel
-```
-
-### 📊 Medidas
-
-- 💰 Total Vendido
-- 📦 Cantidad Vendida
-- 🏷️ Descuento
-- 💵 Precio Unitario
-
-### 🧭 Dimensiones
-
-- 📦 Producto
-- 🏙️ Ciudad
-- 👤 Cliente
-- 📅 Tiempo
-
-El cubo permite realizar análisis dinámicos mediante consultas **MDX**, facilitando la exploración de la información desde distintas perspectivas.
-
----
-
-## 📗 Dashboard en Microsoft Excel
-
-Como parte del proyecto académico original se desarrolló un dashboard utilizando **Microsoft Excel**, conectado al Data Warehouse.
-
-### 📈 Incluye
-
-- Indicadores generales.
-- Ventas por ciudad.
-- Ventas por producto.
-- Gráficos dinámicos.
-- Reportes ejecutivos.
-
-Archivo:
-
-```text
-excel/
-└── SalesIntel_DW_Dashboard_Excel.xlsx
-```
-
----
-
-## 📊 Dashboard en Microsoft Power BI
-
-Como mejora respecto al proyecto académico original, esta versión incorpora un dashboard desarrollado en **Microsoft Power BI Desktop**, conectado directamente al Data Warehouse.
-
-### 📌 KPIs
-
-- 📦 Cantidad Vendida
-- 💰 Total Vendido
-- 🏷️ Descuento Total
-- 🧾 Total de Facturas
-- 📈 Ticket Promedio
-
-### 📈 Visualizaciones
-
-- 🏙️ Ventas por Ciudad.
-- 📦 Ventas por Producto.
-- 📅 Ventas por Año.
-- 📊 Ventas por Producto y Año.
-- 📋 Reporte de los últimos tres meses.
-- 📉 Indicadores ejecutivos.
-- 🎯 KPIs.
-
-### 🗄️ Fuente de datos
-
-Power BI consume directamente las siguientes vistas del Data Warehouse:
+El Data Warehouse publica vistas reutilizables para Excel, Power BI, SSRS o consultas directas:
 
 ```text
 vw_VentasDetalleDW
@@ -393,169 +241,266 @@ vw_VentasProductoAnio
 vw_VentasUltimos3MesesProductoCiudad
 ```
 
-Archivo:
+Procedimientos almacenados:
 
 ```text
-power-bi/
-└── SalesIntelDW.pbix
+sp_ReporteVentasUltimos3MesesProductoCiudad
+sp_ReporteVentasPorRangoFecha
 ```
 
 ---
 
-## 📸 Galería del proyecto
+## 🧊 SQL Server Analysis Services
 
-> Las siguientes rutas corresponden a las evidencias preparadas para documentar el funcionamiento del sistema.
+El modelo prepara cinco vistas específicas para el Data Source View:
 
-- 🏗️ Modelo Data Warehouse: `assets/screenshots/modelo_dw.png`
-- 🧊 Cubo SSAS: `assets/screenshots/cubo_ssas.png`
-- 📊 Dashboard Power BI: `assets/screenshots/dashboard_powerbi.png`
-- 📗 Dashboard Excel: `assets/screenshots/dashboard_excel.png`
+```text
+vw_Cubo_DimProducto
+vw_Cubo_DimCiudad
+vw_Cubo_DimCliente
+vw_Cubo_DimTiempo
+vw_Cubo_FactVentas
+```
+
+Cubo:
+
+```text
+CuboVentasSalesIntel
+```
+
+Dimensiones:
+
+- Producto.
+- Ciudad.
+- Cliente.
+- Tiempo.
+
+Medidas principales:
+
+- Total Vendido.
+- Cantidad Vendida.
+- Descuento.
+- Precio Unitario.
+
+Las consultas MDX están versionadas en:
+
+```text
+analysis-services/mdx/06_Consultas_MDX_Cubo_SalesIntel.mdx
+```
+
+La política de reproducibilidad y exportación de archivos generados por SSDT está documentada en:
+
+```text
+analysis-services/README.md
+```
 
 ---
 
-## 📈 Resultados obtenidos
+## 📗 Dashboard de Excel
 
-La solución fue validada satisfactoriamente mediante consultas SQL, consultas MDX, el cubo OLAP y ambos dashboards.
+Archivo:
+
+```text
+excel/SalesIntel_DW_Dashboard_Excel.xlsx
+```
+
+Incluye indicadores generales, ventas por ciudad, ventas por producto, gráficos dinámicos y análisis ejecutivo.
+
+---
+
+## 📊 Dashboard de Power BI
+
+Archivo:
+
+```text
+power-bi/SalesIntelDW.pbix
+```
+
+KPIs principales:
+
+- Cantidad Vendida.
+- Total Vendido.
+- Descuento Total.
+- Total de Facturas.
+- Ticket Promedio.
+
+Power BI consume principalmente:
+
+```text
+vw_VentasDetalleDW
+vw_VentasPorCiudad
+vw_VentasProductoAnio
+vw_VentasUltimos3MesesProductoCiudad
+```
+
+---
+
+## ✅ Validaciones automatizadas
+
+La fase final de portfolio hardening incorpora pruebas SQL ejecutables:
+
+```text
+database/06_tests/06_Validaciones_Portfolio.sql
+```
+
+Comprueban:
+
+- integridad entre hechos y dimensiones;
+- unicidad de claves de negocio;
+- granularidad de `FactVentas`;
+- KPIs del dataset versionado;
+- existencia de vistas y procedimientos de reporting;
+- existencia de vistas requeridas por SSAS.
+
+El script utiliza `THROW`, por lo que una inconsistencia detiene la ejecución como un fallo real.
+
+### KPIs esperados
 
 | Métrica | Resultado |
-|---------|----------:|
+|---|---:|
 | 📦 Cantidad Vendida | **183** |
 | 💰 Total Vendido | **222,995.00** |
 | 🏷️ Descuento Total | **3,150.00** |
 | 🧾 Total de Facturas | **22** |
-| 📅 Ventas últimos 3 meses | **83,230.00** |
-
-Los resultados fueron verificados mediante:
-
-- ✅ Consultas SQL.
-- ✅ Procedimientos almacenados.
-- ✅ Consultas MDX.
-- ✅ Cubo SQL Server Analysis Services.
-- ✅ Dashboard en Microsoft Excel.
-- ✅ Dashboard en Microsoft Power BI.
 
 ---
 
-## 🔎 Consultas SQL destacadas
+## ▶️ Orden de ejecución
 
-### 🏙️ Ventas por ciudad
-
-```sql
-SELECT
-    NombreCiudad,
-    TotalVendido
-FROM dbo.vw_VentasPorCiudad
-ORDER BY TotalVendido DESC;
-```
-
-### 📦 Ventas por producto y año
-
-```sql
-SELECT
-    Anio,
-    NombreProducto,
-    TotalVendido
-FROM dbo.vw_VentasProductoAnio
-ORDER BY
-    Anio,
-    NombreProducto;
-```
-
-### 📅 Reporte de los últimos tres meses
-
-```sql
-EXEC dbo.sp_ReporteVentasUltimos3MesesProductoCiudad;
-```
-
----
-
-## 📐 Consultas MDX
-
-El repositorio incluye una colección de consultas **MDX** para validar y navegar el cubo multidimensional.
-
-Archivo:
+En SQL Server Management Studio:
 
 ```text
-analysis-services/
-└── mdx/
-    └── 06_Consultas_MDX_Cubo_SalesIntel.mdx
+01_Crear_Modelo_SalesIntel_DW.sql
+02_Insertar_Datos_Prueba_SalesIntel_DW.sql
+03_ETL_Cargar_DW_SalesIntel.sql
+04_Consultas_Reportes_SalesIntel.sql
+05_Preparar_Cubo_SalesIntel.sql
+06_Validaciones_Portfolio.sql
 ```
 
-### Consultas disponibles
+Después:
 
-- 📊 Total general de ventas.
-- 🏙️ Ventas por ciudad.
-- 📦 Ventas por producto.
-- 👤 Ventas por cliente.
-- 📅 Ventas por año.
-- 📆 Ventas por trimestre.
-- 📆 Ventas por mes.
-- 🏆 Top 5 ciudades.
-- 🏆 Top 5 productos.
-- 📈 Ventas por ciudad y producto.
+1. Crear/procesar el cubo `CuboVentasSalesIntel` en Visual Studio/SSDT.
+2. Ejecutar las consultas MDX.
+3. Abrir y actualizar el dashboard de Excel.
+4. Abrir y actualizar `SalesIntelDW.pbix`.
+5. Capturar las evidencias visuales finales.
 
----
+Guía completa:
 
-## 📚 Conceptos aplicados
-
-Durante el desarrollo de esta implementación se aplicaron conocimientos relacionados con:
-
-- 📊 Business Intelligence (BI)
-- ⭐ Data Warehouse
-- ⭐ Modelado dimensional
-- ⭐ Esquema estrella (Star Schema)
-- 🔄 ETL (Extract, Transform & Load)
-- 🗄️ SQL Server
-- 🧊 SQL Server Analysis Services (SSAS)
-- 📐 MDX (Multidimensional Expressions)
-- 📗 Microsoft Excel
-- 📊 Microsoft Power BI
-- 📈 KPIs e indicadores
-- 📉 Dashboards analíticos
-- 📋 Reportes gerenciales
-- 🌿 Git
-- 🐙 GitHub
+```text
+docs/Setup.md
+```
 
 ---
 
-## 🚀 Reimplementación y modernización (2026)
+## 📸 Evidencias de portafolio
 
-La versión publicada en este repositorio fue desarrollada completamente desde cero tomando como referencia únicamente el alcance y los objetivos académicos del proyecto original.
+La carpeta:
 
-Durante esta nueva implementación se realizaron las siguientes mejoras:
+```text
+assets/screenshots/
+```
 
-- ✅ Reconstrucción completa del modelo transaccional.
-- ✅ Diseño de un nuevo Data Warehouse.
-- ✅ Implementación del esquema estrella.
-- ✅ Organización profesional de los scripts SQL.
-- ✅ Separación del proyecto por módulos.
-- ✅ Implementación del proceso ETL.
-- ✅ Construcción del cubo OLAP.
-- ✅ Desarrollo de consultas MDX.
-- ✅ Creación del dashboard en Excel.
-- ✅ Incorporación de un dashboard moderno en Power BI.
-- ✅ Compatibilidad con SQL Server 2022.
-- ✅ Documentación técnica completa.
-- ✅ Organización del repositorio para GitHub.
-- ✅ Integración de Git y control de versiones.
-- ✅ Diseño de identidad visual y logotipo del proyecto.
-- ✅ Optimización para portafolio profesional.
+está reservada para evidencias capturadas desde un entorno local real.
+
+Las capturas mínimas y sus criterios están definidos en:
+
+```text
+docs/Evidencias.md
+```
+
+No se publican enlaces a imágenes inexistentes. Las evidencias requieren SQL Server Management Studio, Visual Studio/SSDT, SSAS, Excel y Power BI Desktop ejecutándose localmente.
+
+---
+
+## 📂 Estructura del repositorio
+
+```text
+SalesIntel-DW
+│
+├── analysis-services
+│   ├── README.md
+│   └── mdx
+│       └── 06_Consultas_MDX_Cubo_SalesIntel.mdx
+│
+├── assets
+│   └── screenshots
+│
+├── database
+│   ├── 01_model
+│   ├── 02_seed
+│   ├── 03_etl
+│   ├── 04_reports
+│   ├── 05_cube
+│   └── 06_tests
+│       └── 06_Validaciones_Portfolio.sql
+│
+├── docs
+│   ├── ARCHITECTURE.md
+│   ├── Evidencias.md
+│   ├── Guia_Crear_Cubo_SalesIntel_DW.md
+│   ├── PORTFOLIO_HARDENING.md
+│   ├── Setup.md
+│   └── logo.jpeg
+│
+├── excel
+│   └── SalesIntel_DW_Dashboard_Excel.xlsx
+│
+├── power-bi
+│   └── SalesIntelDW.pbix
+│
+├── legacy
+│
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+└── .gitignore
+```
+
+---
+
+## 🚀 Reimplementación y modernización 2026
+
+La nueva implementación incorporó:
+
+- reconstrucción del modelo transaccional;
+- nuevo Data Warehouse;
+- esquema estrella;
+- staging y ETL;
+- consultas y reporting reutilizable;
+- preparación y documentación de SSAS;
+- consultas MDX;
+- dashboard Excel;
+- dashboard Power BI;
+- compatibilidad con SQL Server 2022;
+- documentación de arquitectura;
+- pruebas SQL automatizadas;
+- control de versiones;
+- identidad visual;
+- portfolio hardening.
 
 ---
 
 ## 📋 Estado del proyecto
 
 | Componente | Estado |
-|------------|--------|
+|---|---|
 | 🗄️ Modelo OLTP | ✅ Completado |
 | ⭐ Data Warehouse | ✅ Completado |
 | 🔄 ETL | ✅ Completado |
-| 🧊 Cubo SSAS | ✅ Completado |
-| 📐 Consultas MDX | ✅ Completado |
+| 📑 Reporting SQL | ✅ Completado |
+| 🧊 Capa SSAS / guía reproducible | ✅ Completada |
+| 📐 Consultas MDX | ✅ Completadas |
 | 📗 Dashboard Excel | ✅ Completado |
 | 📊 Dashboard Power BI | ✅ Completado |
-| 📑 Documentación | ✅ Completada |
-| 🌿 GitHub | ✅ Publicado |
+| ✅ Validaciones SQL | ✅ Completadas |
+| 📚 Documentación | ✅ Completada |
+| 📸 Evidencias visuales | ⏳ Captura local pendiente |
+
+### Maintenance Mode
+
+SalesIntel DW se considera **funcionalmente finalizado** como proyecto de portafolio. Nuevas funcionalidades solo deberían añadirse si existe un caso de negocio concreto o si mejoran directamente su reproducibilidad, evidencia o mantenimiento.
 
 ---
 
@@ -563,40 +508,65 @@ Durante esta nueva implementación se realizaron las siguientes mejoras:
 
 Este proyecto evidencia experiencia práctica en:
 
-- 🗄️ Diseño de bases de datos relacionales.
-- ⭐ Modelado dimensional.
-- 📊 Inteligencia de negocios.
-- 📈 Business Analytics.
-- 🔄 Procesos ETL.
-- 🧊 SQL Server Analysis Services.
-- 📐 Consultas MDX.
-- 📊 Visualización de datos.
-- 📗 Microsoft Excel.
-- 📊 Microsoft Power BI.
-- 📑 Documentación técnica.
-- 🌿 Control de versiones con Git.
-- 🐙 Publicación de proyectos en GitHub.
+- diseño de bases de datos relacionales;
+- SQL Server y T-SQL;
+- modelado dimensional;
+- esquemas estrella;
+- Business Intelligence;
+- Data Warehousing;
+- ETL y staging;
+- SQL Server Analysis Services;
+- MDX;
+- KPIs y reporting ejecutivo;
+- Microsoft Excel;
+- Microsoft Power BI;
+- validación de calidad de datos;
+- documentación técnica;
+- Git y GitHub.
+
+---
+
+## 💼 Posicionamiento
+
+SalesIntel DW no se plantea como un SaaS independiente. Su valor principal es demostrar capacidades técnicas para proyectos de:
+
+- Business Intelligence;
+- Data Warehouse;
+- integración y transformación de datos;
+- modelado analítico;
+- dashboards Power BI;
+- reporting gerencial.
+
+Puede utilizarse como demostrador técnico para servicios personalizados de BI y analítica empresarial.
+
+---
+
+## 📚 Documentación
+
+- `docs/ARCHITECTURE.md` — arquitectura técnica.
+- `docs/Setup.md` — instalación y orden de ejecución.
+- `docs/Guia_Crear_Cubo_SalesIntel_DW.md` — construcción del cubo.
+- `analysis-services/README.md` — reproducibilidad SSAS.
+- `docs/Evidencias.md` — evidencias visuales requeridas.
+- `docs/PORTFOLIO_HARDENING.md` — criterio de cierre del proyecto.
+- `CHANGELOG.md` — historial de hitos.
 
 ---
 
 ## 📜 Licencia
 
-Este proyecto fue desarrollado originalmente con fines **académicos** para el **Instituto Tecnológico de las Américas (ITLA)**.
+La implementación publicada corresponde a una nueva versión desarrollada en 2026 con fines educativos, demostrativos y de portafolio profesional.
 
-La versión publicada en este repositorio corresponde a una **nueva implementación desarrollada en 2026**, con fines educativos, demostrativos y como parte de un portafolio profesional.
-
-El proyecto conserva la idea académica original, pero su arquitectura, organización, documentación, mejoras técnicas y presentación fueron desarrolladas nuevamente.
-
-Consulta el archivo [`LICENSE`](LICENSE) para más información.
+Consulta [`LICENSE`](LICENSE) para los términos aplicables.
 
 ---
 
 ## 🙌 Agradecimientos
 
-- 🏫 Instituto Tecnológico de las Américas (ITLA).
-- 👨‍🏫 Prof. Carlos Caraballo.
-- 👥 Equipo del proyecto académico original.
-- 💙 Comunidad de SQL Server y Power BI.
+- Instituto Tecnológico de las Américas (ITLA).
+- Prof. Carlos Caraballo.
+- Equipo del proyecto académico original.
+- Comunidad de SQL Server y Power BI.
 
 ---
 
