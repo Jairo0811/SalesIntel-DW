@@ -3,9 +3,15 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ITLA-2017--C3-0057B8?style=for-the-badge" alt="ITLA 2017-C3">
+  <img src="https://img.shields.io/badge/ITLA-SOF--014-0057B8?style=for-the-badge" alt="ITLA SOF-014">
   <img src="https://img.shields.io/badge/Status-Finalizado-success?style=for-the-badge" alt="Estado del proyecto">
   <img src="https://img.shields.io/badge/Reimplementación-2026-brightgreen?style=for-the-badge" alt="Reimplementación 2026">
+</p>
+
+<p align="center">
+  <a href="https://github.com/Jairo0811/SalesIntel-DW/actions/workflows/ci.yml">
+    <img src="https://github.com/Jairo0811/SalesIntel-DW/actions/workflows/ci.yml/badge.svg" alt="CI" />
+  </a>
 </p>
 
 <p align="center">
@@ -44,25 +50,38 @@ SalesIntel_OLTP
 
 ---
 
-## 📌 Información del proyecto
+## 🎓 Información académica
 
 | Información | Detalle |
 |---|---|
 | 🏫 Institución | Instituto Tecnológico de las Américas (ITLA) |
 | 📘 Asignatura | Minería de Datos e Inteligencia de Negocios (SOF-014) |
-| 👨‍🏫 Profesor | Carlos Caraballo |
+| 👨‍🏫 Profesor | Carlos Caraballos |
 | 📅 Período académico original | **2017-C3** |
 | 👥 Modalidad | Proyecto Final Grupal |
 | 🛠️ Reimplementación | **2026** |
 | 🎯 Enfoque actual | Portafolio profesional de BI / Data Warehouse |
 | 📌 Estado | ✅ Finalizado / Maintenance Mode |
 
-### Integrantes del proyecto académico original
+### 👥 Equipo académico original
 
-| Integrante | Matrícula |
+| 👤 Integrante | 🆔 Matrícula |
 |---|---|
-| Francis Jairo Matías Rosario | **2015-2984** |
-| John Christopher Adames Perez | **2015-2986** |
+| 👨🏻‍💻 Francis Jairo Matías Rosario | **2015-2984** |
+| 👨🏻‍💻 John Christopher Adames Perez | **2015-2986** |
+
+## 🧭 Continuidad académica
+
+### 👨‍🏫 Continuidad por profesor
+
+SalesIntel-DW comparte profesor con [**ArchiveCore**](https://github.com/Jairo0811/ArchiveCore). Ambos proyectos fueron desarrollados bajo la docencia de **Carlos Caraballos**, pero corresponden a áreas distintas de datos.
+
+| Orden | Asignatura | Proyecto | Período |
+|---:|---|---|---|
+| 1 | Bases de Datos Avanzadas (SOF-008) | [**ArchiveCore**](https://github.com/Jairo0811/ArchiveCore) | Pendiente de documentar |
+| 2 | Minería de Datos e Inteligencia de Negocios (SOF-014) | **SalesIntel-DW** | 2017-C3 |
+
+La relación es **académica y docente**. ArchiveCore se enfoca en diseño y mecanismos avanzados de base de datos; SalesIntel-DW amplía la trayectoria hacia Data Warehouse, ETL, OLAP y Business Intelligence.
 
 ---
 
@@ -85,9 +104,13 @@ SalesIntel_OLTP
 
 ---
 
-## 🧰 Stack tecnológico
+## 🧱 Stack tecnológico
 
-### Datos y ETL
+### 🗄️ Datos y ETL
+
+<p>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="48" height="48" alt="Microsoft SQL Server" />
+</p>
 
 - Microsoft SQL Server 2022.
 - T-SQL.
@@ -97,7 +120,12 @@ SalesIntel_OLTP
 - Esquema estrella.
 - Vistas, procedimientos almacenados e índices analíticos.
 
-### Análisis multidimensional
+### 🧊 Análisis multidimensional
+
+<p>
+  <img src="https://img.shields.io/badge/SSAS-Multidimensional-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white" alt="SQL Server Analysis Services" />
+  <img src="https://img.shields.io/badge/MDX-OLAP-2563EB?style=flat-square" alt="MDX" />
+</p>
 
 - SQL Server Analysis Services (SSAS Multidimensional).
 - SQL Server Data Tools / Visual Studio.
@@ -105,12 +133,21 @@ SalesIntel_OLTP
 - Cubo OLAP.
 - MDX.
 
-### Visualización
+### 📊 Visualización
+
+<p>
+  <img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white" alt="Microsoft Excel" />
+  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black" alt="Microsoft Power BI" />
+</p>
 
 - Microsoft Excel.
 - Microsoft Power BI Desktop.
 
-### Ingeniería y documentación
+### 🧪 Ingeniería y documentación
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github" alt="Git y GitHub" />
+</p>
 
 - Git.
 - GitHub.
