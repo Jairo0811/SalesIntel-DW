@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  repository-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate portfolio structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f README.md
+          test -d database/01_model
+          test -d database/02_seed
+          test -d database/03_etl
+          test -d database/04_reports
+          test -d database/05_cube
+          test -d database/06_tests
+          find database -type f -name '*.sql' -print -quit | grep -q .
+          test -d analysis-services
+          test -d power-bi
+          test -d excel
+      - name: Validate academic documentation
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -Fq "## 🎓 Información académica" README.md
+          grep -Fq "## 🧭 Continuidad académica" README.md
+          grep -Fq "## 🧱 Stack tecnológico" README.md
+          grep -Fq "SOF-014" README.md
