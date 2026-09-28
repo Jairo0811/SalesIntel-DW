@@ -275,7 +275,7 @@ try {
     $dimTiempo.Type = [Microsoft.AnalysisServices.DimensionType]::Time
     [void]$db.Dimensions.Add($dimTiempo)
 
-    [void](Add-DimensionAttribute -Dimension $dimTiempo -Dsv $dsv -AttributeName "Fecha" -TableName "vw_Cubo_DimTiempo" -KeyColumn "TiempoKey" -NameColumn "Fecha" -IsKey)
+    [void](Add-DimensionAttribute -Dimension $dimTiempo -Dsv $dsv -AttributeName "Fecha" -TableName "vw_Cubo_DimTiempo" -KeyColumn "TiempoKey" -IsKey)
     [void](Add-DimensionAttribute -Dimension $dimTiempo -Dsv $dsv -AttributeName "Anio" -TableName "vw_Cubo_DimTiempo" -KeyColumn "Anio")
     [void](Add-DimensionAttribute -Dimension $dimTiempo -Dsv $dsv -AttributeName "Trimestre" -TableName "vw_Cubo_DimTiempo" -KeyColumn "Trimestre")
     [void](Add-DimensionAttribute -Dimension $dimTiempo -Dsv $dsv -AttributeName "Nombre Trimestre" -TableName "vw_Cubo_DimTiempo" -KeyColumn "Trimestre" -NameColumn "NombreTrimestre")
