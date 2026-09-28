@@ -103,7 +103,7 @@ FROM [CuboVentasSalesIntel]
     }
 
     Write-Host ""
-    Write-Host "Navegación por ciudad: OK ($($cellSet.Axes[1].Set.Tuples.Count) miembros)" -ForegroundColor Green
+    Write-Host "Navegacion por ciudad: OK ($($cellSet.Axes[1].Set.Tuples.Count) miembros)" -ForegroundColor Green
     Write-Host "Smoke test SSAS completado correctamente." -ForegroundColor Green
 }
 finally {
