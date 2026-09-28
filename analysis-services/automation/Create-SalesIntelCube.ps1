@@ -226,7 +226,7 @@ $server.Connect($AnalysisServer)
 try {
     $existing = $server.Databases.FindByName($SsasDatabase)
     if ($existing) {
-        Write-Host "  Eliminando versión anterior de $SsasDatabase..."
+        Write-Host "  Eliminando version anterior de $SsasDatabase..."
         $existing.Drop()
     }
 
