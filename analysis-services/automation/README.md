@@ -1,12 +1,8 @@
 # Automatización del cubo SSAS
 
-Esta carpeta contiene una ruta **experimental y verificable** para crear y probar
-`CuboVentasSalesIntel` directamente en la instancia local de SQL Server Analysis Services.
+Esta carpeta contiene scripts reproducibles para crear y validar `CuboVentasSalesIntel` en SQL Server Analysis Services Multidimensional.
 
-La idea es validar primero el modelo en un servidor real y, una vez funcione, importarlo
-desde Visual Studio mediante **Importar desde el servidor (multidimensional)**. De ese modo
-los archivos `.dwproj`, `.cube`, `.dim`, `.dsv` y `.ds` finales serán generados por
-SSDT a partir de un cubo que ya fue probado.
+El flujo ya fue ejecutado correctamente contra una instancia real y sus metadatos fueron importados después a Visual Studio/SSDT, por lo que el repositorio incluye tanto la automatización como el proyecto multidimensional real.
 
 ## Requisitos
 
@@ -17,7 +13,7 @@ SSDT a partir de un cubo que ya fue probado.
 - SSMS / librerías AMO y ADOMD instaladas.
 - Haber ejecutado los scripts `database/01_model` a `database/05_cube`.
 
-Valores usados actualmente:
+Valores por defecto del entorno de validación:
 
 - SQL Server: `DESKTOP-5QBHCJS`
 - Base relacional: `SalesIntel_DW`
@@ -25,30 +21,31 @@ Valores usados actualmente:
 - Base SSAS: `SalesIntel_DW_Cubo`
 - Cubo: `CuboVentasSalesIntel`
 
-## Crear el cubo
+Todos estos valores pueden sobreescribirse mediante parámetros del script.
 
-Desde **Windows PowerShell** abierto en la raíz del repositorio:
+## Crear o reconstruir el cubo
+
+Desde Windows PowerShell abierto en la raíz del repositorio:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process Bypass
-
 .\analysis-services\automation\Create-SalesIntelCube.ps1
 ```
 
 El script:
 
-1. comprueba las cinco vistas `vw_Cubo_*`;
-2. crea/recrea la base `SalesIntel_DW_Cubo` en SSAS;
+1. valida las cinco vistas `vw_Cubo_*`;
+2. crea o recrea la base `SalesIntel_DW_Cubo` en SSAS;
 3. crea el Data Source y el DSV;
 4. crea las dimensiones Producto, Ciudad, Cliente y Tiempo;
 5. crea `CuboVentasSalesIntel`;
 6. crea el measure group `Ventas`;
-7. crea y procesa la partición `FactVentas`.
+7. concede a la cuenta del servicio SSAS acceso `db_datareader` sobre `SalesIntel_DW` cuando el usuario ejecutor tiene permisos para hacerlo;
+8. crea y procesa la partición `FactVentas`.
 
-> El script elimina la base SSAS `SalesIntel_DW_Cubo` si ya existe. No elimina
-> `SalesIntel_DW` ni modifica las bases relacionales.
+> El script elimina la base SSAS `SalesIntel_DW_Cubo` si ya existe. No elimina ni modifica la base relacional `SalesIntel_DW`.
 
-Para crear los metadatos sin procesarlos:
+Para crear los metadatos sin procesar:
 
 ```powershell
 .\analysis-services\automation\Create-SalesIntelCube.ps1 -SkipProcess
@@ -62,32 +59,22 @@ Después de un procesamiento exitoso:
 .\analysis-services\automation\Test-SalesIntelCube.ps1
 ```
 
-El smoke test ejecuta MDX y espera:
+El smoke test MDX valida:
 
-| KPI | Valor |
+| KPI | Valor esperado |
 |---|---:|
 | Total Vendido | 222,995.00 |
 | Cantidad Vendida | 183 |
 | Descuento | 3,150.00 |
 
-También comprueba que la dimensión Ciudad devuelve miembros al navegar el cubo.
+También comprueba que la dimensión Ciudad devuelve miembros navegables.
 
-## Si falla el procesamiento por permisos
+## Proyecto SSDT real
 
-El Data Source se configura inicialmente con `ImpersonateCurrentUser` para facilitar
-la prueba local. Si SSAS exige una cuenta de servicio para procesar, configura la
-impersonación desde Visual Studio/SSMS y concede a la cuenta del servicio de Analysis
-Services permiso `db_datareader` sobre `SalesIntel_DW`.
+El modelo procesado fue importado desde SSAS a Visual Studio y se versiona en:
 
-## Después de validar
+```text
+analysis-services/SalesIntel_DW_Cubo/
+```
 
-Cuando ambos scripts pasen:
-
-1. Abrir Visual Studio.
-2. Elegir **Importar desde el servidor (multidimensional)**.
-3. Servidor: `localhost\SSAS2022`.
-4. Base: `SalesIntel_DW_Cubo`.
-5. Guardar el proyecto dentro de `analysis-services/SalesIntel_DW_Cubo/`.
-6. Revisar que no se versionen contraseñas ni credenciales.
-7. Sustituir esta automatización experimental por los artefactos SSDT reales o conservarla
-   como herramienta de reconstrucción.
+Por tanto, la automatización ya no sustituye al proyecto SSDT: ambos forman parte de la estrategia de reproducibilidad del repositorio.
