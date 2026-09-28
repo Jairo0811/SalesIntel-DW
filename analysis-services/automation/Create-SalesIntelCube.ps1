@@ -105,7 +105,7 @@ function Add-RegularMeasureGroupDimension {
 Import-Assembly -AssemblyName "Microsoft.AnalysisServices" -FileName "Microsoft.AnalysisServices.dll"
 Add-Type -AssemblyName System.Data
 
-$sqlConnectionString = "Provider=MSOLEDBSQL19.1;Data Source=$SqlServer;Integrated Security=SSPI;Initial Catalog=$SqlDatabase;Encrypt=Mandatory;TrustServerCertificate=True"
+$sqlConnectionString = "Provider=MSOLEDBSQL19.1;Data Source=$SqlServer;Integrated Security=SSPI;Initial Catalog=$SqlDatabase;Use Encryption for Data=Mandatory;Trust Server Certificate=True"
 
 Write-Host "== SalesIntel DW / SSAS Cube Builder ==" -ForegroundColor Cyan
 Write-Host "SQL Server:       $SqlServer"
