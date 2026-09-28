@@ -1,0 +1,440 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>CuboVentasSalesIntel</ID>
+  <Name>CuboVentasSalesIntel</Name>
+  <CreatedTimestamp>2026-09-28T04:46:53.133333Z</CreatedTimestamp>
+  <LastSchemaUpdate>2026-09-28T04:46:53.133333Z</LastSchemaUpdate>
+  <LastProcessed>2026-09-28T04:46:55.303333Z</LastProcessed>
+  <State>Processed</State>
+  <Language>1033</Language>
+  <Collation>Modern_Spanish_CI_AS</Collation>
+  <Dimensions>
+    <Dimension>
+      <ID>DimProducto</ID>
+      <Name>Dim Producto</Name>
+      <DimensionID>DimProducto</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Nombre Producto</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Categoria</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Estado Producto</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension>
+      <ID>DimCiudad</ID>
+      <Name>Dim Ciudad</Name>
+      <DimensionID>DimCiudad</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Nombre Ciudad</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Provincia</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Region</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension>
+      <ID>DimCliente</ID>
+      <Name>Dim Cliente</Name>
+      <DimensionID>DimCliente</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Nombre Cliente</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Tipo Cliente</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension>
+      <ID>DimTiempo</ID>
+      <Name>Dim Tiempo</Name>
+      <DimensionID>DimTiempo</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Fecha</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Anio</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Trimestre</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Nombre Trimestre</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Mes</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Nombre Mes</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Dia</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Dia Semana</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <HierarchyID>Calendario</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <DefaultMeasure>[Total Vendido]</DefaultMeasure>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Ventas</ID>
+      <Name>Ventas</Name>
+      <CreatedTimestamp>2026-09-28T04:46:53.15Z</CreatedTimestamp>
+      <LastSchemaUpdate>2026-09-28T04:46:53.15Z</LastSchemaUpdate>
+      <LastProcessed>2026-09-28T04:46:55.303333Z</LastProcessed>
+      <State>Processed</State>
+      <Type>Sales</Type>
+      <Measures>
+        <Measure>
+          <ID>Total Vendido</ID>
+          <Name>Total Vendido</Name>
+          <DataType>Double</DataType>
+          <Source>
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>vw_Cubo_FactVentas</TableID>
+              <ColumnID>TotalVendido</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0.00</FormatString>
+        </Measure>
+        <Measure>
+          <ID>Cantidad Vendida</ID>
+          <Name>Cantidad Vendida</Name>
+          <DataType>Integer</DataType>
+          <Source>
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>vw_Cubo_FactVentas</TableID>
+              <ColumnID>CantidadVendida</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0</FormatString>
+        </Measure>
+        <Measure>
+          <ID>Descuento</ID>
+          <Name>Descuento</Name>
+          <DataType>Double</DataType>
+          <Source>
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>vw_Cubo_FactVentas</TableID>
+              <ColumnID>Descuento</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0.00</FormatString>
+        </Measure>
+        <Measure>
+          <ID>Precio Unitario</ID>
+          <Name>Precio Unitario</Name>
+          <DataType>Double</DataType>
+          <Source>
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>vw_Cubo_FactVentas</TableID>
+              <ColumnID>PrecioUnitario</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0.00</FormatString>
+        </Measure>
+        <Measure>
+          <ID>Lineas de Venta</ID>
+          <Name>Lineas de Venta</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <DataType>BigInt</DataType>
+          <Source>
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>vw_Cubo_FactVentas</TableID>
+              <ColumnID>VentaKey</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedSize>652</EstimatedSize>
+      <ProcessingMode>LazyAggregations</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>DimProducto</CubeDimensionID>
+          <Cardinality>One</Cardinality>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Nombre Producto</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_FactVentas</TableID>
+                    <ColumnID>ProductoKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Categoria</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimProducto</TableID>
+                    <ColumnID>Categoria</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Estado Producto</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimProducto</TableID>
+                    <ColumnID>EstadoProducto</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>DimCiudad</CubeDimensionID>
+          <Cardinality>One</Cardinality>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Nombre Ciudad</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_FactVentas</TableID>
+                    <ColumnID>CiudadKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Provincia</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimCiudad</TableID>
+                    <ColumnID>Provincia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Region</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimCiudad</TableID>
+                    <ColumnID>Region</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>DimCliente</CubeDimensionID>
+          <Cardinality>One</Cardinality>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Nombre Cliente</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_FactVentas</TableID>
+                    <ColumnID>ClienteKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Tipo Cliente</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimCliente</TableID>
+                    <ColumnID>TipoCliente</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>DimTiempo</CubeDimensionID>
+          <Cardinality>One</Cardinality>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Fecha</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_FactVentas</TableID>
+                    <ColumnID>TiempoKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Anio</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>SmallInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimTiempo</TableID>
+                    <ColumnID>Anio</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Trimestre</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimTiempo</TableID>
+                    <ColumnID>Trimestre</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Nombre Trimestre</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimTiempo</TableID>
+                    <ColumnID>Trimestre</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Mes</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimTiempo</TableID>
+                    <ColumnID>Mes</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Nombre Mes</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimTiempo</TableID>
+                    <ColumnID>Mes</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Dia</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimTiempo</TableID>
+                    <ColumnID>Dia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Dia Semana</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>vw_Cubo_DimTiempo</TableID>
+                    <ColumnID>DiaSemana</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions>
+        <Partition>
+          <ID>FactVentas</ID>
+          <Name>FactVentas</Name>
+          <CreatedTimestamp>2026-09-28T04:46:53.163333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2026-09-28T04:46:53.163333Z</LastSchemaUpdate>
+          <LastProcessed>2026-09-28T04:46:55.286667Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="QueryBinding">
+            <DataSourceID>SalesIntel_DW</DataSourceID>
+            <QueryDefinition>SELECT VentaKey, ProductoKey, CiudadKey, ClienteKey, TiempoKey, IdFactura, IdDetalleFactura, CantidadVendida, PrecioUnitario, Descuento, TotalVendido FROM dbo.vw_Cubo_FactVentas</QueryDefinition>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching>
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" />
+          </ProactiveCaching>
+          <EstimatedSize>652</EstimatedSize>
+        </Partition>
+      </Partitions>
+      <ProactiveCaching>
+        <SilenceInterval>-PT1S</SilenceInterval>
+        <Latency>-PT1S</Latency>
+        <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+        <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+        <Source xsi:type="ProactiveCachingInheritedBinding" />
+      </ProactiveCaching>
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source>
+    <DataSourceViewID>SalesIntel_DW_DSV</DataSourceViewID>
+  </Source>
+  <ProactiveCaching>
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" />
+  </ProactiveCaching>
+</Cube>
