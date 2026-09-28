@@ -1,0 +1,262 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DimTiempo</ID>
+  <Name>Dim Tiempo</Name>
+  <CreatedTimestamp>2026-09-28T04:46:53.11Z</CreatedTimestamp>
+  <LastSchemaUpdate>2026-09-28T04:46:53.11Z</LastSchemaUpdate>
+  <LastProcessed>2026-09-28T04:46:55.143333Z</LastProcessed>
+  <State>Processed</State>
+  <Source xsi:type="DataSourceViewBinding">
+    <DataSourceViewID>SalesIntel_DW_DSV</DataSourceViewID>
+  </Source>
+  <Type>Time</Type>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Language>1033</Language>
+  <Collation>Modern_Spanish_CI_AS</Collation>
+  <UnknownMemberName>Unknown</UnknownMemberName>
+  <Attributes>
+    <Attribute>
+      <ID>Fecha</ID>
+      <Name>Fecha</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding">
+            <TableID>vw_Cubo_DimTiempo</TableID>
+            <ColumnID>TiempoKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>vw_Cubo_DimTiempo</TableID>
+          <ColumnID>TiempoKey</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship>
+          <AttributeID>Anio</AttributeID>
+          <Name>Anio</Name>
+        </AttributeRelationship>
+        <AttributeRelationship>
+          <AttributeID>Trimestre</AttributeID>
+          <Name>Trimestre</Name>
+        </AttributeRelationship>
+        <AttributeRelationship>
+          <AttributeID>Nombre Trimestre</AttributeID>
+          <Name>Nombre Trimestre</Name>
+        </AttributeRelationship>
+        <AttributeRelationship>
+          <AttributeID>Mes</AttributeID>
+          <Name>Mes</Name>
+        </AttributeRelationship>
+        <AttributeRelationship>
+          <AttributeID>Nombre Mes</AttributeID>
+          <Name>Nombre Mes</Name>
+        </AttributeRelationship>
+        <AttributeRelationship>
+          <AttributeID>Dia</AttributeID>
+          <Name>Dia</Name>
+        </AttributeRelationship>
+        <AttributeRelationship>
+          <AttributeID>Dia Semana</AttributeID>
+          <Name>Dia Semana</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute>
+      <ID>Anio</ID>
+      <Name>Anio</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding">
+            <TableID>vw_Cubo_DimTiempo</TableID>
+            <ColumnID>Anio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>vw_Cubo_DimTiempo</TableID>
+          <ColumnID>Anio</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute>
+      <ID>Trimestre</ID>
+      <Name>Trimestre</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding">
+            <TableID>vw_Cubo_DimTiempo</TableID>
+            <ColumnID>Trimestre</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>vw_Cubo_DimTiempo</TableID>
+          <ColumnID>Trimestre</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute>
+      <ID>Nombre Trimestre</ID>
+      <Name>Nombre Trimestre</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding">
+            <TableID>vw_Cubo_DimTiempo</TableID>
+            <ColumnID>Trimestre</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>vw_Cubo_DimTiempo</TableID>
+          <ColumnID>NombreTrimestre</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute>
+      <ID>Mes</ID>
+      <Name>Mes</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding">
+            <TableID>vw_Cubo_DimTiempo</TableID>
+            <ColumnID>Mes</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>vw_Cubo_DimTiempo</TableID>
+          <ColumnID>Mes</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute>
+      <ID>Nombre Mes</ID>
+      <Name>Nombre Mes</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding">
+            <TableID>vw_Cubo_DimTiempo</TableID>
+            <ColumnID>Mes</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>vw_Cubo_DimTiempo</TableID>
+          <ColumnID>NombreMes</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute>
+      <ID>Dia</ID>
+      <Name>Dia</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding">
+            <TableID>vw_Cubo_DimTiempo</TableID>
+            <ColumnID>Dia</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>vw_Cubo_DimTiempo</TableID>
+          <ColumnID>Dia</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute>
+      <ID>Dia Semana</ID>
+      <Name>Dia Semana</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>WChar</DataType>
+          <Source xsi:type="ColumnBinding">
+            <TableID>vw_Cubo_DimTiempo</TableID>
+            <ColumnID>DiaSemana</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <Source xsi:type="ColumnBinding">
+          <TableID>vw_Cubo_DimTiempo</TableID>
+          <ColumnID>DiaSemana</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy>
+      <ID>Calendario</ID>
+      <Name>Calendario</Name>
+      <AllMemberName>Todos los Periodos</AllMemberName>
+      <Levels>
+        <Level>
+          <ID>Anio</ID>
+          <Name>Anio</Name>
+          <SourceAttributeID>Anio</SourceAttributeID>
+        </Level>
+        <Level>
+          <ID>Trimestre</ID>
+          <Name>Trimestre</Name>
+          <SourceAttributeID>Nombre Trimestre</SourceAttributeID>
+        </Level>
+        <Level>
+          <ID>Mes</ID>
+          <Name>Mes</Name>
+          <SourceAttributeID>Nombre Mes</SourceAttributeID>
+        </Level>
+        <Level>
+          <ID>Fecha</ID>
+          <Name>Fecha</Name>
+          <SourceAttributeID>Fecha</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ProactiveCaching>
+    <SilenceInterval>-PT1S</SilenceInterval>
+    <Latency>-PT1S</Latency>
+    <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+    <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+    <Source xsi:type="ProactiveCachingInheritedBinding" />
+  </ProactiveCaching>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

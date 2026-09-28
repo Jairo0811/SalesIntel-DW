@@ -1,0 +1,177 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>SalesIntel_DW_DSV</ID>
+  <Name>SalesIntel DW DSV</Name>
+  <CreatedTimestamp>2026-09-28T04:46:53.023333Z</CreatedTimestamp>
+  <LastSchemaUpdate>2026-09-28T04:46:53.023333Z</LastSchemaUpdate>
+  <DataSourceID>SalesIntel_DW</DataSourceID>
+  <Schema>
+    <xs:schema id="SalesIntel_DW_DSV" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="SalesIntel_DW_DSV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="vw_Cubo_DimProducto" msprop:DbTableName="vw_Cubo_DimProducto" msprop:FriendlyName="vw_Cubo_DimProducto" msprop:TableType="View" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ProductoKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                  <xs:element name="IdProducto" type="xs:int" />
+                  <xs:element name="NombreProducto">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="150" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Categoria" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PrecioBase" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="EstadoProducto" msdata:ReadOnly="true" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="vw_Cubo_DimCiudad" msprop:DbTableName="vw_Cubo_DimCiudad" msprop:FriendlyName="vw_Cubo_DimCiudad" msprop:TableType="View" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CiudadKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                  <xs:element name="IdCiudad" type="xs:int" />
+                  <xs:element name="NombreCiudad">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Provincia" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Region" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="vw_Cubo_DimCliente" msprop:DbTableName="vw_Cubo_DimCliente" msprop:FriendlyName="vw_Cubo_DimCliente" msprop:TableType="View" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ClienteKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+                  <xs:element name="IdCliente" type="xs:int" />
+                  <xs:element name="NombreCliente">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="150" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TipoCliente" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="vw_Cubo_DimTiempo" msprop:DbTableName="vw_Cubo_DimTiempo" msprop:FriendlyName="vw_Cubo_DimTiempo" msprop:TableType="View" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TiempoKey" type="xs:int" />
+                  <xs:element name="Fecha" type="xs:dateTime" />
+                  <xs:element name="Anio" type="xs:short" />
+                  <xs:element name="Trimestre" type="xs:unsignedByte" />
+                  <xs:element name="NombreTrimestre" msdata:ReadOnly="true" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Mes" type="xs:unsignedByte" />
+                  <xs:element name="NombreMes">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Dia" type="xs:unsignedByte" />
+                  <xs:element name="DiaSemana">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="vw_Cubo_FactVentas" msprop:DbTableName="vw_Cubo_FactVentas" msprop:FriendlyName="vw_Cubo_FactVentas" msprop:TableType="View" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="VentaKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+                  <xs:element name="ProductoKey" type="xs:int" />
+                  <xs:element name="CiudadKey" type="xs:int" />
+                  <xs:element name="ClienteKey" type="xs:int" />
+                  <xs:element name="TiempoKey" type="xs:int" />
+                  <xs:element name="IdFactura" type="xs:int" />
+                  <xs:element name="IdDetalleFactura" type="xs:int" />
+                  <xs:element name="CantidadVendida" type="xs:int" />
+                  <xs:element name="PrecioUnitario" type="xs:decimal" />
+                  <xs:element name="Descuento" type="xs:decimal" />
+                  <xs:element name="TotalVendido" msdata:ReadOnly="true" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//vw_Cubo_DimProducto" />
+          <xs:field xpath="ProductoKey" />
+        </xs:unique>
+        <xs:unique name="vw_Cubo_DimCiudad_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//vw_Cubo_DimCiudad" />
+          <xs:field xpath="CiudadKey" />
+        </xs:unique>
+        <xs:unique name="vw_Cubo_DimCliente_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//vw_Cubo_DimCliente" />
+          <xs:field xpath="ClienteKey" />
+        </xs:unique>
+        <xs:unique name="vw_Cubo_DimTiempo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//vw_Cubo_DimTiempo" />
+          <xs:field xpath="TiempoKey" />
+        </xs:unique>
+        <xs:unique name="vw_Cubo_FactVentas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//vw_Cubo_FactVentas" />
+          <xs:field xpath="VentaKey" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="FK_Producto_FactVentas" msdata:parent="vw_Cubo_DimProducto" msdata:child="vw_Cubo_FactVentas" msdata:parentkey="ProductoKey" msdata:childkey="ProductoKey" />
+          <msdata:Relationship name="FK_Ciudad_FactVentas" msdata:parent="vw_Cubo_DimCiudad" msdata:child="vw_Cubo_FactVentas" msdata:parentkey="CiudadKey" msdata:childkey="CiudadKey" />
+          <msdata:Relationship name="FK_Cliente_FactVentas" msdata:parent="vw_Cubo_DimCliente" msdata:child="vw_Cubo_FactVentas" msdata:parentkey="ClienteKey" msdata:childkey="ClienteKey" />
+          <msdata:Relationship name="FK_Tiempo_FactVentas" msdata:parent="vw_Cubo_DimTiempo" msdata:child="vw_Cubo_FactVentas" msdata:parentkey="TiempoKey" msdata:childkey="TiempoKey" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <SalesIntel_DW_DSV xmlns="" />
+  </Schema>
+</DataSourceView>

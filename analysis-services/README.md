@@ -1,27 +1,57 @@
 # SQL Server Analysis Services
 
-Esta carpeta contiene los artefactos versionables relacionados con la capa multidimensional de **SalesIntel DW**.
+Esta carpeta contiene la capa multidimensional real de **SalesIntel DW**.
 
 ## Estado actual
 
-El repositorio conserva en control de versiones:
+El repositorio incluye y valida:
 
-- las vistas SQL que sirven como origen del cubo;
-- las relaciones esperadas del Data Source View;
-- la guía detallada de construcción del cubo;
-- las consultas MDX de validación y navegación.
+- el proyecto SSDT multidimensional real importado desde una instancia funcional de SSAS;
+- el Data Source conectado a `SalesIntel_DW`;
+- el Data Source View basado en las cinco vistas `vw_Cubo_*`;
+- cuatro dimensiones: Producto, Ciudad, Cliente y Tiempo;
+- el cubo `CuboVentasSalesIntel`;
+- la partición `FactVentas`;
+- scripts PowerShell para reconstrucción y smoke test;
+- consultas MDX de validación y navegación.
 
-El cubo se crea con **SQL Server Analysis Services Multidimensional** desde Visual Studio/SSDT utilizando la guía `docs/Guia_Crear_Cubo_SalesIntel_DW.md`.
+El cubo fue creado y procesado correctamente en una instancia local de **SQL Server Analysis Services Multidimensional** y luego importado desde el servidor a Visual Studio/SSDT para versionar artefactos reales, no XML escrito manualmente.
+
+## Proyecto SSDT
+
+Ruta:
+
+```text
+analysis-services/SalesIntel_DW_Cubo/
+```
+
+Estructura principal:
+
+```text
+SalesIntel_DW_Cubo/
+├── SalesIntel_DW_Cubo.slnx
+└── SalesIntel_DW_Cubo/
+    ├── SalesIntel_DW_Cubo.dwproj
+    ├── SalesIntel_DW_Cubo.database
+    ├── SalesIntel DW.ds
+    ├── SalesIntel DW DSV.dsv
+    ├── CuboVentasSalesIntel.cube
+    ├── CuboVentasSalesIntel.partitions
+    ├── Dim Producto.dim
+    ├── Dim Ciudad.dim
+    ├── Dim Cliente.dim
+    └── Dim Tiempo.dim
+```
 
 ## Fuente de datos
 
-Base de datos:
+Base relacional:
 
 ```text
 SalesIntel_DW
 ```
 
-Vistas destinadas al Data Source View:
+Vistas utilizadas por el DSV:
 
 ```text
 vw_Cubo_DimProducto
@@ -31,7 +61,7 @@ vw_Cubo_DimTiempo
 vw_Cubo_FactVentas
 ```
 
-## Cubo esperado
+## Cubo
 
 ```text
 CuboVentasSalesIntel
@@ -39,56 +69,65 @@ CuboVentasSalesIntel
 
 ### Dimensiones
 
-- Producto
-- Ciudad
-- Cliente
-- Tiempo
+- Dim Producto
+- Dim Ciudad
+- Dim Cliente
+- Dim Tiempo
 
-### Medidas principales
+### Medidas de validación
 
-- Cantidad Vendida
 - Total Vendido
+- Cantidad Vendida
 - Descuento
-- Precio Unitario
 
-## Consultas MDX
+El modelo también conserva medidas auxiliares utilizadas por el cubo y sus cálculos.
 
-Las consultas de validación están versionadas en:
+## Validación realizada
+
+El smoke test MDX fue ejecutado contra el cubo procesado y confirmó:
+
+| KPI | Resultado |
+|---|---:|
+| Total Vendido | 222,995.00 |
+| Cantidad Vendida | 183 |
+| Descuento | 3,150.00 |
+| Ciudades navegables | 8 |
+
+Script:
+
+```text
+analysis-services/automation/Test-SalesIntelCube.ps1
+```
+
+Consultas MDX adicionales:
 
 ```text
 analysis-services/mdx/06_Consultas_MDX_Cubo_SalesIntel.mdx
 ```
 
-## Reproducibilidad
+## Reconstrucción automatizada
 
-Para reconstruir la capa multidimensional:
+Para reconstruir el cubo en una instancia compatible de SSAS:
 
-1. Ejecutar los scripts `database/01_model` a `database/05_cube`.
-2. Crear un proyecto multidimensional de Analysis Services en Visual Studio.
-3. Conectar el Data Source a `SalesIntel_DW`.
-4. Agregar las cinco vistas `vw_Cubo_*` al Data Source View.
-5. Configurar las relaciones descritas en `docs/Setup.md`.
-6. Crear y procesar `CuboVentasSalesIntel`.
-7. Ejecutar las consultas MDX versionadas.
-8. Capturar las evidencias indicadas en `docs/Evidencias.md`.
-
-## Nota sobre archivos generados por SSDT
-
-No se incluyen archivos `.dwproj`, `.cube`, `.dim`, `.dsv` o `.ds` escritos manualmente. Esos metadatos deben exportarse desde una instancia real de Visual Studio/SSDT después de validar el cubo, evitando publicar definiciones XML no verificadas como si fueran un proyecto ejecutable.
-
-Cuando se exporte el proyecto real, la estructura recomendada es:
-
-```text
-analysis-services/
-├── README.md
-├── mdx/
-│   └── 06_Consultas_MDX_Cubo_SalesIntel.mdx
-└── SalesIntel_DW_Cubo/
-    ├── SalesIntel_DW_Cubo.dwproj
-    ├── *.ds
-    ├── *.dsv
-    ├── *.dim
-    └── *.cube
+```powershell
+.\analysis-services\automation\Create-SalesIntelCube.ps1
 ```
 
-Hasta ese momento, la guía y las consultas MDX constituyen la fuente reproducible y verificable de la capa SSAS dentro del repositorio.
+Para ejecutar el smoke test:
+
+```powershell
+.\analysis-services\automation\Test-SalesIntelCube.ps1
+```
+
+Los parámetros de servidor y base de datos pueden sobreescribirse desde PowerShell.
+
+## Reproducibilidad
+
+1. Ejecutar los scripts `database/01_model` a `database/05_cube`.
+2. Verificar que `SalesIntel_DW` contiene las cinco vistas `vw_Cubo_*`.
+3. Ejecutar `Create-SalesIntelCube.ps1`.
+4. Procesar `CuboVentasSalesIntel`.
+5. Ejecutar `Test-SalesIntelCube.ps1`.
+6. Abrir el proyecto SSDT versionado o importar nuevamente el modelo desde la instancia SSAS si se desea reproducir el flujo completo.
+
+La guía detallada permanece disponible en `docs/Guia_Crear_Cubo_SalesIntel_DW.md`.
