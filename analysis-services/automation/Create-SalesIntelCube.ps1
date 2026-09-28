@@ -160,7 +160,7 @@ try {
     $ds.Name = "SalesIntel DW"
     $ds.ID = "SalesIntel_DW"
     $ds.ConnectionString = $sqlConnectionString
-    $ds.ImpersonationInfo = [Microsoft.AnalysisServices.ImpersonationInfo]::new([Microsoft.AnalysisServices.ImpersonationMode]::ImpersonateCurrentUser)
+    $ds.ImpersonationInfo = [Microsoft.AnalysisServices.ImpersonationInfo]::new([Microsoft.AnalysisServices.ImpersonationMode]::ImpersonateServiceAccount)
     [void]$db.DataSources.Add($ds)
     $ds.Update()
 
