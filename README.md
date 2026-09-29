@@ -1,9 +1,13 @@
 <p align="center">
-  <img src="docs/logo.jpeg" width="420" alt="SalesIntel DW Logo">
+  <img src="docs/logo.jpeg" width="720" alt="SalesIntel DW Logo">
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/ITLA-SOF--014-0057B8?style=for-the-badge" alt="ITLA SOF-014">
+</p>
+
+
+<p align="center">
   <img src="https://img.shields.io/badge/Status-Finalizado-success?style=for-the-badge" alt="Estado del proyecto">
   <img src="https://img.shields.io/badge/Reimplementación-2026-brightgreen?style=for-the-badge" alt="Reimplementación 2026">
 </p>
